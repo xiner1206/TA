@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ta.framework.dao.StoreDao">
+    <resultMap id="resultMap" type="com.ta.framework.entity.Store">
+        <id column="StoreId" property="storeId"></id>
+        <result column="StoreName" property="storeName"></result>
+        <result column="StoreType" property="storeType"></result>
+        <result column="StorePhone" property="storePhone"></result>
+        <result column="StoreRemark" property="storeRemark"></result>
+        <result column="StoreLocation" property="storeLocation"></result>
+        <result column="StoreState" property="storeState"></result>
+        <result column="CreateTime" property="createTime" ></result>
+        <result column="EndTime" property="endTime" ></result>
+        <result column="StorePicIdList" property="storePicIdList" typeHandler="ListTypeHandler"></result>
+        <association column="UserId" property="user" javaType="com.ta.framework.entity.User"
+                     select="com.ta.framework.dao.UserDao.selectById"/>
+        <association column="TradeId" property="trade" javaType="com.ta.framework.entity.Trade"
+                     select="com.ta.framework.dao.TradeDao.selectById"/>
+    </resultMap>
+
+    <sql id="all_column">
+        StoreId,
+        StoreName,
+        StoreType,
+        StorePhone,
+        StoreRemark,
+        StoreLocation,
+        StoreState,
+        CreateTime,
+        EndTime,
+        StorePicIdList,
+        UserId,
+        TradeId
+    </sql>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="pojo.storeId" parameterType="com.ta.framework.entity.Store">
+        insert into Store
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.storeId != null"> StoreId, </if>
+            <if test="pojo.storeName != null"> StoreName, </if>
+            <if test="pojo.storeType != null"> StoreType, </if>
+            <if test="pojo.storePhone != null"> StorePhone, </if>
+            <if test="pojo.storeRemark != null"> StoreRemark, </if>
+            <if test="pojo.storeLocation != null"> StoreLocation, </if>
+            <if test="pojo.storeState != null"> StoreState, </if>
+            <if test="pojo.createTime != null"> CreateTime, </if>
+            <if test="pojo.endTime != null"> EndTime, </if>
+            <if test="pojo.storePicIdList != null"> StorePicIdList, </if>
+            <if test="pojo.user != null and pojo.user.userId != 0"> UserId, </if>
+            <if test="pojo.trade != null and pojo.trade.tradeId != 0"> TradeId, </if>
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.storeId != null"> #{pojo.storeId}, </if>
+            <if test="pojo.storeName != null"> #{pojo.storeName}, </if>
+            <if test="pojo.storeType != null"> #{pojo.storeType}, </if>
+            <if test="pojo.storePhone != null"> #{pojo.storePhone}, </if>
+            <if test="pojo.storeRemark != null"> #{pojo.storeRemark}, </if>
+            <if test="pojo.storeLocation != null"> #{pojo.storeLocation}, </if>
+            <if test="pojo.storeState != null"> #{pojo.storeState}, </if>
+            <if test="pojo.createTime != null"> #{pojo.createTime}, </if>
+            <if test="pojo.endTime != null"> #{pojo.endTime}, </if>
+            <if test="pojo.storePicIdList != null"> #{pojo.storePicIdList,typeHandler=ListTypeHandler}, </if>
+            <if test="pojo.user != null and pojo.user.userId != 0">  #{pojo.user.userId}, </if>
+            <if test="pojo.trade != null and pojo.trade.tradeId != 0"> #{pojo.trade.tradeId}, </if>
+        </trim>
+    </insert>
+
+    <update id="update">
+        UPDATE Trade
+        <trim prefix="SET" suffixOverrides="," >
+            <if test="pojo.storeName != null"> StoreName = #{pojo.storeName}, </if>
+            <if test="pojo.storeType != null"> StoreType = #{pojo.storeType}, </if>
+            <if test="pojo.storePhone != null"> StorePhone = #{pojo.storePhone}, </if>
+            <if test="pojo.storeRemark != null">  StoreRemark = #{pojo.storeRemark}, </if>
+            <if test="pojo.storeLocation != null"> StoreLocation = #{pojo.storeLocation}, </if>
+            <if test="pojo.storeState != null"> StoreState = #{pojo.storeState}, </if>
+            <if test="pojo.createTime != null"> CreateTime = #{pojo.createTime}, </if>
+            <if test="pojo.endTime != null"> EndTime = #{pojo.endTime}, </if>
+            <if test="pojo.storePicIdList != null"> StorePicIdList = #{pojo.storePicIdList,typeHandler=ListTypeHandler}, </if>
+            <if test="pojo.user != null and pojo.user.userId != 0"> UserId = #{pojo.user.userId}, </if>
+            <if test="pojo.trade != null and pojo.trade.tradeId != 0"> TradeId = #{pojo.trade.tradeId}, </if>
+        </trim>
+        WHERE StoreId = #{pojo.storeId}
+    </update>
+
+    <delete id="delete">
+        DELETE FROM Store
+        WHERE StoreId = #{pojo.storeId}
+    </delete>
+
+    <select id="select" resultMap="resultMap">
+        SELECT <include refid="all_column" />
+        FROM Store
+        <where>
+            <if test="pojo.storeId != null"> AND StoreId = #{pojo.storeId} </if>
+            <if test="pojo.storeName != null"> AND StoreName = #{pojo.storeName}, </if>
+            <if test="pojo.storeType != null"> AND StoreType = #{pojo.storeType}, </if>
+            <if test="pojo.storePhone != null"> AND StorePhone = #{pojo.storePhone}, </if>
+            <if test="pojo.storeRemark != null"> AND StoreRemark = #{pojo.storeRemark}, </if>
+            <if test="pojo.storeLocation != null"> AND StoreLocation = #{pojo.storeLocation}, </if>
+            <if test="pojo.storeState != null"> AND StoreState = #{pojo.storeState}, </if>
+            <if test="pojo.createTime != null"> AND CreateTime = #{pojo.createTime}, </if>
+            <if test="pojo.endTime != null"> AND EndTime = #{pojo.endTime}, </if>
+            <if test="pojo.storePicIdList != null">AND StorePicIdList = #{pojo.storePicIdList,typeHandler=ListTypeHandler}, </if>
+            <if test="pojo.user != null and pojo.user.userId != 0"> AND UserId = #{pojo.user.userId}, </if>
+            <if test="pojo.trade != null and pojo.trade.tradeId != 0"> AND TradeId = #{pojo.trade.tradeId}, </if>
+        </where>
+    </select>
+
+    <select id="selectById" resultMap="resultMap" parameterType="int">
+        SELECT <include refid="all_column" />
+        FROM Store
+        WHERE StoreId = #{id}
+    </select>
+
+    <select id="selectByPage" resultMap="resultMap" parameterType="com.ta.framework.entity.Dto.Page">
+        SELECT <include refid="all_column" />
+        FROM Store
+        <where>
+            <if test="page.condition != null">
+                <if test="page.condition.storeId != null"> AND StoreId = #{page.condition.storeId} </if>
+                <if test="page.condition.storeName != null"> AND StoreName = #{page.condition.storeName}, </if>
+                <if test="page.condition.storeType != null"> AND StoreType = #{page.condition.storeType}, </if>
+                <if test="page.condition.storePhone != null"> AND StorePhone = #{page.condition.storePhone}, </if>
+                <if test="page.condition.storeRemark != null"> AND StoreRemark = #{page.condition.storeRemark}, </if>
+                <if test="page.condition.storeLocation != null"> AND StoreLocation = #{page.condition.storeLocation}, </if>
+                <if test="page.condition.storeState != null"> AND StoreState = #{page.condition.storeState}, </if>
+                <if test="page.condition.createTime != null"> AND CreateTime = #{page.condition.createTime}, </if>
+                <if test="page.condition.endTime != null"> AND EndTime = #{page.condition.endTime}, </if>
+                <if test="page.condition.storePicIdList != null">AND StorePicIdList = #{page.condition.storePicIdList,typeHandler=ListTypeHandler}, </if>
+                <if test="page.condition.user != null and page.condition.user.userId != 0"> AND UserId = #{page.condition.user.userId}, </if>
+                <if test="page.condition.trade != null and page.condition.trade.tradeId != 0"> AND TradeId = #{page.condition.trade.tradeId}, </if>
+            </if>
+        </where>
+        ORDER BY StoreId DESC
+        LIMIT #{page.startIndex}, #{page.pageSize}
+    </select>
+
+    <select id="countByPage" resultType="int" parameterType="com.ta.framework.entity.Dto.Page">
+        SELECT count(0)
+        FROM Store
+        <where>
+            <if test="page.condition != null">
+                <if test="page.condition.storeId != null"> AND StoreId = #{page.condition.storeId} </if>
+                <if test="page.condition.storeName != null"> AND StoreName = #{page.condition.storeName}, </if>
+                <if test="page.condition.storeType != null"> AND StoreType = #{page.condition.storeType}, </if>
+                <if test="page.condition.storePhone != null"> AND StorePhone = #{page.condition.storePhone}, </if>
+                <if test="page.condition.storeRemark != null"> AND StoreRemark = #{page.condition.storeRemark}, </if>
+                <if test="page.condition.storeLocation != null"> AND StoreLocation = #{page.condition.storeLocation}, </if>
+                <if test="page.condition.storeState != null"> AND StoreState = #{page.condition.storeState}, </if>
+                <if test="page.condition.createTime != null"> AND CreateTime = #{page.condition.createTime}, </if>
+                <if test="page.condition.endTime != null"> AND EndTime = #{page.condition.endTime}, </if>
+                <if test="page.condition.storePicIdList != null">AND StorePicIdList = #{page.condition.storePicIdList,typeHandler=ListTypeHandler}, </if>
+                <if test="page.condition.user != null and page.condition.user.userId != 0"> AND UserId #{page.condition.user.userId}, </if>
+                <if test="page.condition.trade != null and page.condition.trade.tradeId != 0"> AND TradeId = #{page.condition.trade.tradeId}, </if>
+            </if>
+        </where>
+    </select>
+</mapper>

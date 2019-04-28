@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ta.framework.dao.TradeDao">
+    <resultMap id="resultMap" type="com.ta.framework.entity.Trade">
+        <id column="TradeId" property="tradeId"></id>
+        <result column="TradeName" property="tradeName"></result>
+        <result column="TradePhone" property="tradePhone"></result>
+        <result column="TradeState" property="tradeState"></result>
+        <result column="CreateTime" property="createTime"></result>
+        <result column="EndTime" property="endTime"></result>
+        <result column="TradeRemark" property="tradeRemark"></result>
+        <result column="TradeLocation" property="tradeLocation"></result>
+        <result column="TradePicIdList" property="tradePicIdList" typeHandler="ListTypeHandler"></result>
+         <association column="UserId" property="user" javaType="com.ta.framework.entity.User"
+                     select="com.ta.framework.dao.UserDao.selectById"/>
+    </resultMap>
+
+    <sql id="all_column">
+        TradeId,
+        TradeName,
+        TradePhone,
+        TradeState,
+        CreateTime,
+        EndTime,
+        TradeRemark,
+        TradeLocation,
+        TradePicIdList,
+        UserId
+    </sql>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="pojo.tradeId" parameterType="com.ta.framework.entity.Trade">
+        insert into Trade
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.tradeId != null"> TradeId, </if>
+            <if test="pojo.tradeName != null"> TradeName, </if>
+            <if test="pojo.tradePhone != null"> TradePhone, </if>
+            <if test="pojo.tradeState != null"> TradeState, </if>
+            <if test="pojo.createTime != null"> CreateTime, </if>
+            <if test="pojo.endTime != null"> EndTime, </if>
+            <if test="pojo.tradeRemark != null"> TradeRemark, </if>
+            <if test="pojo.tradeLocation != null"> TradeLocation, </if>
+            <if test="pojo.tradePicIdList != null"> TradePicIdList, </if>
+            <if test="pojo.user != null and pojo.user.userId != 0"> UserId, </if>
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.tradeId != null"> #{pojo.tradeId}, </if>
+            <if test="pojo.tradeName != null"> #{pojo.tradeName}, </if>
+            <if test="pojo.tradePhone != null"> #{pojo.tradePhone}, </if>
+            <if test="pojo.tradeState != null"> #{pojo.tradeState}, </if>
+            <if test="pojo.createTime != null"> #{pojo.createTime}, </if>
+            <if test="pojo.endTime != null"> #{pojo.endTime}, </if>
+            <if test="pojo.tradeRemark != null"> #{pojo.tradeRemark}, </if>
+            <if test="pojo.tradeLocation != null"> #{pojo.tradeLocation}, </if>
+            <if test="pojo.tradePicIdList != null"> #{pojo.tradePicIdList,typeHandler=ListTypeHandler}, </if>
+            <if test="pojo.user != null and pojo.user.userId != 0">  #{pojo.user.userId}, </if>
+        </trim>
+    </insert>
+
+    <update id="update">
+        UPDATE Trade
+        <trim prefix="SET" suffixOverrides="," >
+            <if test="pojo.tradeName != null"> TradeName = #{pojo.tradeName}, </if>
+            <if test="pojo.tradePhone != null"> TradePhone = #{pojo.tradePhone}, </if>
+            <if test="pojo.tradeState != null"> TradeState = #{pojo.tradeState}, </if>
+            <if test="pojo.createTime != null"> CreateTime = #{pojo.createTime}, </if>
+            <if test="pojo.endTime != null">  EndTime = #{pojo.endTime}, </if>
+            <if test="pojo.tradeRemark != null"> TradeRemark = #{pojo.tradeRemark}, </if>
+            <if test="pojo.tradeLocation != null"> TradeLocation = #{pojo.tradeLocation}, </if>
+            <if test="pojo.tradePicIdList != null"> TradePicIdList = #{pojo.tradePicIdList,typeHandler=ListTypeHandler}, </if>
+            <if test="pojo.user != null and pojo.user.userId != 0"> UserId = #{pojo.user.userId}, </if>
+        </trim>
+        WHERE TradeId = #{pojo.tradeId}
+    </update>
+
+    <delete id="delete">
+        DELETE FROM Trade
+        WHERE TradeId = #{pojo.tradeId}
+    </delete>
+
+    <select id="select" resultMap="resultMap">
+        SELECT <include refid="all_column" />
+        FROM Trade
+        <where>
+            <if test="pojo.tradeId != null"> AND TradeId = #{pojo.tradeId} </if>
+            <if test="pojo.tradeName != null"> AND TradeName = #{pojo.tradeName}, </if>
+            <if test="pojo.tradePhone != null"> AND TradePhone = #{pojo.tradePhone}, </if>
+            <if test="pojo.tradeState != null"> AND TradeState = #{pojo.tradeState}, </if>
+            <if test="pojo.createTime != null"> AND CreateTime = #{pojo.createTime}, </if>
+            <if test="pojo.endTime != null"> AND EndTime = #{pojo.endTime}, </if>
+            <if test="pojo.tradeRemark != null"> AND TradeRemark = #{pojo.tradeRemark}, </if>
+            <if test="pojo.tradeLocation != null"> AND TradeLocation = #{pojo.tradeLocation}, </if>
+            <if test="pojo.tradePicIdList != null"> AND TradePicIdList = #{pojo.tradePicIdList,typeHandler=ListTypeHandler}, </if>
+            <if test="pojo.user != null and pojo.user.userId != 0"> AND UserId = #{pojo.user.userId}, </if>
+        </where>
+    </select>
+
+    <select id="selectById" resultMap="resultMap" parameterType="int">
+        SELECT <include refid="all_column" />
+        FROM Trade
+        WHERE TradeId = #{id}
+    </select>
+
+    <select id="selectByPage" resultMap="resultMap" parameterType="com.ta.framework.entity.Dto.Page">
+        SELECT <include refid="all_column" />
+        FROM Trade
+        <where>
+            <if test="page.condition !=null ">
+                <if test="page.condition.tradeId != null "> AND TradeId = #{page.condition.tradeId} </if>
+                <if test="page.condition.tradeName != null"> AND TradeName = #{page.condition.tradeName}, </if>
+                <if test="page.condition.tradePhone != null"> AND TradePhone = #{page.condition.tradePhone}, </if>
+                <if test="page.condition.tradeState != null"> AND TradeState = #{page.condition.tradeState}, </if>
+                <if test="page.condition.createTime != null"> AND CreateTime = #{page.condition.createTime}, </if>
+                <if test="page.condition.endTime != null"> AND EndTime = #{page.condition.endTime}, </if>
+                <if test="page.condition.tradeRemark != null"> AND TradeRemark = #{page.condition.tradeRemark}, </if>
+                <if test="page.condition.tradeLocation != null"> AND TradeLocation = #{page.condition.tradeLocation}, </if>
+                <if test="page.condition.tradePicIdList != null"> AND TradePicIdList = #{page.condition.tradePicIdList,typeHandler=ListTypeHandler}, </if>
+                <if test="page.condition.user != null and page.condition.user.userId != 0"> AND UserId = #{page.condition.user.userId}, </if>
+            </if>
+        </where>
+        ORDER BY TradeId DESC
+        LIMIT #{page.startIndex}, #{page.pageSize}
+    </select>
+
+
+    <select id="countByPage" resultType="int" parameterType="com.ta.framework.entity.Dto.Page">
+        SELECT count(0)
+        FROM Trade
+        <where>
+            <if test="page.condition !=null ">
+                <if test="page.condition.tradeId != null "> AND TradeId = #{page.condition.tradeId} </if>
+                <if test="page.condition.tradeName != null"> AND TradeName = #{page.condition.tradeName}, </if>
+                <if test="page.condition.tradePhone != null"> AND TradePhone = #{page.condition.tradePhone}, </if>
+                <if test="page.condition.tradeState != null"> AND TradeState = #{page.condition.tradeState}, </if>
+                <if test="page.condition.createTime != null"> AND CreateTime = #{page.condition.createTime}, </if>
+                <if test="page.condition.endTime != null"> AND EndTime = #{page.condition.endTime}, </if>
+                <if test="page.condition.tradeRemark != null"> AND TradeRemark = #{page.condition.tradeRemark}, </if>
+                <if test="page.condition.tradeLocation != null"> AND TradeLocation = #{page.condition.tradeLocation}, </if>
+                <if test="page.condition.tradePicIdList != null"> AND TradePicIdList = #{page.condition.tradePicIdList,typeHandler=ListTypeHandler}, </if>
+                <if test="page.condition.user != null and page.condition.user.userId != 0"> AND UserId = #{page.condition.user.userId}, </if>
+            </if>
+        </where>
+    </select>
+</mapper>

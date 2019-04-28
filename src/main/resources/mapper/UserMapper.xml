@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ta.framework.dao.UserDao">
+    <resultMap id="resultMap" type="com.ta.framework.entity.User">
+        <id column="UserId" property="userId"></id>
+        <result column="UserName" property="userName"></result>
+        <result column="UserNum" property="userNum"></result>
+        <result column="UserPassword" property="userPassword"></result>
+        <result column="UserState" property="userState"></result>
+    </resultMap>
+    <sql id="all_column">
+        UserId,
+        UserName,
+        UserNum,
+        UserPassword,
+        UserState
+    </sql>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="pojo.userId" parameterType="com.ta.framework.entity.User">
+        INSERT INTO User
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.userName != null"> UserName, </if>
+            <if test="pojo.userNum != null"> UserNum, </if>
+            <if test="pojo.userPassword != null"> UserPassword, </if>
+            <if test="pojo.userState != null"> UserState, </if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.userName != null"> #{pojo.userName}, </if>
+            <if test="pojo.userNum != null"> #{pojo.userNum}, </if>
+            <if test="pojo.userPassword != null"> #{pojo.userPassword}, </if>
+            <if test="pojo.userState != null"> #{pojo.userState}, </if>
+        </trim>
+    </insert>
+
+    <update id="update">
+        UPDATE User
+        <trim prefix="SET" suffixOverrides="," >
+            <if test="pojo.userName != null"> UserName =  #{pojo.userName}, </if>
+            <if test="pojo.userNum != null">  UserNum = #{pojo.userNum}, </if>
+            <if test="pojo.userPassword != null"> UserPassword = #{pojo.userPassword}, </if>
+            <if test="pojo.userState != null"> UserState = #{pojo.userState}, </if>
+        </trim>
+        WHERE UserId = #{pojo.userId}
+    </update>
+
+    <delete id="delete">
+        DELETE FROM User
+        WHERE UserId = #{pojo.userId}
+    </delete>
+
+    <select id="select" resultMap="resultMap">
+        SELECT <include refid="all_column" />
+        FROM User
+        <where>
+            <if test="pojo.userId != null"> AND UserId = #{pojo.userId} </if>
+            <if test="pojo.userName != null"> AND UserName = #{pojo.userName} </if>
+            <if test="pojo.userNum != null"> AND UserNum = #{pojo.userNum} </if>
+            <if test="pojo.userPassword != null"> AND UserPassword = #{pojo.userPassword} </if>
+            <if test="pojo.userState != null"> AND UserState = #{pojo.userState} </if>
+        </where>
+    </select>
+
+    <select id="selectById" resultMap="resultMap" parameterType="int">
+        SELECT <include refid="all_column" />
+        FROM User
+        WHERE UserId = #{id}
+    </select>
+
+    <select id="selectByPage" resultMap="resultMap" parameterType="com.ta.framework.entity.Dto.Page">
+        SELECT <include refid="all_column" />
+        FROM User
+        <where>
+            <if test="page.condition.userId != null"> AND UserId = #{page.condition.userId} </if>
+            <if test="page.condition.userName != null"> AND UserName = #{page.condition.userName} </if>
+            <if test="page.condition.userNum != null"> AND UserNum = #{page.condition.userNum} </if>
+            <if test="page.condition.userPassword != null"> AND UserPassword = #{page.condition.userPassword} </if>
+            <if test="page.condition.userState != null"> AND UserState = #{page.condition.userState} </if>
+        </where>
+        ORDER BY UserId DESC
+        LIMIT #{page.startIndex}, #{page.pageSize}
+    </select>
+
+
+    <select id="countByPage" resultType="int" parameterType="com.ta.framework.entity.Dto.Page">
+        SELECT count(0)
+        FROM User
+        <where>
+            <if test="page.condition.userId != null"> AND UserId = #{page.condition.userId} </if>
+            <if test="page.condition.userName != null"> AND UserName = #{page.condition.userName} </if>
+            <if test="page.condition.userNum != null"> AND UserNum = #{page.condition.userNum} </if>
+            <if test="page.condition.userPassword != null"> AND UserPassword = #{page.condition.userPassword} </if>
+            <if test="page.condition.userState != null"> AND UserState = #{page.condition.userState} </if>
+        </where>
+    </select>
+</mapper>

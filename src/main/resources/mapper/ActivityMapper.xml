@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ta.framework.dao.ActivityDao">
+    <resultMap id="resultMap" type="com.ta.framework.entity.Activity">
+        <id column="ActivityId" property="activityId"></id>
+        <result column="ActivityName" property="activityName"></result>
+        <result column="ActivityState" property="activityState"></result>
+        <result column="ActivityRemark" property="activityRemark"></result>
+        <result column="CreateTime" property="createTime" ></result>
+        <result column="EndTime" property="endTime" ></result>
+        <result column="ActivityDiscount" property="activityDiscount"></result>
+        <result column="ActivityPicIdList" property="activityPicIdList" typeHandler="ListTypeHandler"></result>
+        <association column="StoreId" property="store" javaType="com.ta.framework.entity.Store"
+                     select="com.ta.framework.dao.StoreDao.selectById"/>
+    </resultMap>
+
+    <sql id="all_column">
+        ActivityId,
+        ActivityName,
+        ActivityState,
+        ActivityRemark,
+        CreateTime,
+        EndTime,
+        ActivityDiscount,
+        ActivityPicIdList,
+        StoreId
+    </sql>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="pojo.activityId" parameterType="com.ta.framework.entity.Activity">
+        insert into Activity
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.activityId != null"> ActivityId, </if>
+            <if test="pojo.activityName != null"> ActivityName, </if>
+            <if test="pojo.activityState != null"> ActivityState, </if>
+            <if test="pojo.activityRemark != null"> ActivityRemark, </if>
+            <if test="pojo.createTime != null"> CreateTime, </if>
+            <if test="pojo.endTime != null"> EndTime, </if>
+            <if test="pojo.activityDiscount != null"> ActivityDiscount, </if>
+            <if test="pojo.activityPicIdList != null"> ActivityPicIdList, </if>
+            <if test="pojo.store != null and pojo.store.storeId != 0"> StoreId, </if>
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.activityId != null"> #{pojo.activityId}, </if>
+            <if test="pojo.activityName != null"> #{pojo.activityName}, </if>
+            <if test="pojo.activityState != null"> #{pojo.activityState}, </if>
+            <if test="pojo.activityRemark != null"> #{pojo.activityRemark}, </if>
+            <if test="pojo.createTime != null"> #{pojo.createTime  }, </if>
+            <if test="pojo.endTime != null"> #{pojo.endTime  }, </if>
+            <if test="pojo.activityDiscount != null"> #{pojo.activityDiscount}, </if>
+            <if test="pojo.activityPicIdList != null"> #{pojo.activityPicIdList,typeHandler=ListTypeHandler}, </if>
+            <if test="pojo.store != null and pojo.store.storeId != 0">  #{pojo.store.storeId}, </if>
+        </trim>
+    </insert>
+
+    <update id="update">
+        UPDATE Activity
+        <trim prefix="SET" suffixOverrides="," >
+            <if test="pojo.activityName != null"> ActivityName = #{pojo.activityName}, </if>
+            <if test="pojo.activityState != null"> ActivityState = #{pojo.activityState}, </if>
+            <if test="pojo.activityRemark != null"> ActivityRemark = #{pojo.activityRemark}, </if>
+            <if test="pojo.createTime != null"> CreateTime = #{pojo.createTime  }, </if>
+            <if test="pojo.endTime != null">  EndTime = #{pojo.endTime  }, </if>
+            <if test="pojo.activityDiscount != null"> ActivityDiscount = #{pojo.activityDiscount}, </if>
+            <if test="pojo.activityPicIdList != null"> ActivityPicIdList = #{pojo.activityPicIdList,typeHandler=ListTypeHandler}, </if>
+            <if test="pojo.store != null and pojo.store.storeId != 0"> StoreId = #{pojo.store.storeId}, </if>
+        </trim>
+        WHERE ActivityId = #{pojo.activityId}
+    </update>
+
+    <delete id="delete">
+        DELETE FROM Activity
+        WHERE ActivityId = #{pojo.activityId}
+    </delete>
+
+    <select id="select" resultMap="resultMap">
+        SELECT <include refid="all_column" />
+        FROM Activity
+        <where>
+            <if test="pojo.activityId != null"> AND ActivityId = #{pojo.activityId} </if>
+            <if test="pojo.activityName != null"> AND ActivityName = #{pojo.activityName}, </if>
+            <if test="pojo.activityState != null"> AND ActivityState = #{pojo.activityState}, </if>
+            <if test="pojo.activityRemark != null"> AND ActivityRemark = #{pojo.activityRemark}, </if>
+            <if test="pojo.createTime != null"> AND CreateTime = #{pojo.createTime  }, </if>
+            <if test="pojo.endTime != null"> AND EndTime = #{pojo.endTime  }, </if>
+            <if test="pojo.activityDiscount != null"> AND ActivityDiscount = #{pojo.activityDiscount}, </if>
+            <if test="pojo.activityPicIdList != null"> AND ActivityPicIdList = #{pojo.activityPicIdList,typeHandler=ListTypeHandler}, </if>
+            <if test="pojo.store != null and pojo.store.storeId != 0"> AND StoreId = #{pojo.store.storeId}, </if>
+        </where>
+    </select>
+
+    <select id="selectById" resultMap="resultMap" parameterType="int">
+        SELECT <include refid="all_column" />
+        FROM Activity
+        WHERE ActivityId = #{id}
+    </select>
+
+    <select id="selectByPage" resultMap="resultMap" parameterType="com.ta.framework.entity.Dto.Page">
+        SELECT <include refid="all_column" />
+        FROM Activity
+        <where>
+            <if test="page.condition != null">
+                <if test="page.condition.activityId != null"> AND UserId = #{page.condition.activityId} </if>
+                <if test="page.condition.activityName != null"> AND ActivityName = #{page.condition.activityName}, </if>
+                <if test="page.condition.activityState != null"> AND ActivityState = #{page.condition.activityState}, </if>
+                <if test="page.condition.activityRemark != null"> AND ActivityRemark = #{page.condition.activityRemark}, </if>
+                <if test="page.condition.activityDiscount != null"> AND ActivityDiscount = #{page.condition.activityDiscount}, </if>
+                <if test="page.condition.activityPicIdList != null"> AND ActivityPicIdList = #{page.condition.activityPicIdList,typeHandler=ListTypeHandler}, </if>
+                <if test="page.condition.store != null and page.condition.store.storeId != 0"> AND UserId = #{page.condition.store.storeId}, </if>
+            </if>
+        AND (CreateTime &gt;= #{page.condition.createTime} AND CreateTime &lt;= #{page.condition.endTime}) OR
+        (CreateTime &lt;= #{page.condition.createTime} AND EndTime &gt;= #{page.condition.endTime}) OR
+        (EndTime &gt;= #{page.condition.createTime} AND EndTime &lt;= #{page.condition.endTime})
+        </where>
+        ORDER BY ActivityId DESC
+        LIMIT #{page.startIndex}, #{page.pageSize}
+    </select>
+
+
+    <select id="countByPage" resultType="int" parameterType="com.ta.framework.entity.Dto.Page">
+        SELECT count(0)
+        FROM Activity
+        <where>
+            <if test="page.condition != null">
+                <if test="page.condition.activityId != null"> AND UserId = #{page.condition.activityId} </if>
+                <if test="page.condition.activityName != null"> AND ActivityName = #{page.condition.activityName}, </if>
+                <if test="page.condition.activityState != null"> AND ActivityState = #{page.condition.activityState}, </if>
+                <if test="page.condition.activityRemark != null"> AND ActivityRemark = #{page.condition.activityRemark}, </if>
+                <if test="page.condition.activityDiscount != null"> AND ActivityDiscount = #{page.condition.activityDiscount}, </if>
+                <if test="page.condition.activityPicIdList != null"> AND ActivityPicIdList = #{page.condition.activityPicIdList,typeHandler=ListTypeHandler}, </if>
+                <if test="page.condition.store != null and page.condition.store.storeId != 0"> AND UserId = #{page.condition.store.storeId}, </if>
+            </if>
+        AND (CreateTime &gt;= #{page.condition.createTime} AND CreateTime &lt;= #{page.condition.endTime}) OR
+        (CreateTime &lt;= #{page.condition.createTime} AND EndTime &gt;= #{page.condition.endTime}) OR
+        (EndTime &gt;= #{page.condition.createTime} AND EndTime &lt;= #{page.condition.endTime})
+        </where>
+        <!--
+            <if test="page.condition.createTime != null"> AND CreateTime = #{page.condition.createTime  }, </if>
+            <if test="page.condition.endTime != null"> AND EndTime = #{page.condition.endTime  }, </if>
+        -->
+    </select>
+</mapper>

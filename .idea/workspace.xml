@@ -1,0 +1,1406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="TradingArea:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f0a7f7c6-531f-4491-a190-918a95fa6e85" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/../TradingArea/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/TradingArea.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/sql/init.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/controller/ActivityController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/controller/CommodityController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/controller/PictureController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/controller/StoreController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/controller/TradeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/dao/ActivityDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/dao/CommodityDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/dao/PictureDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/dao/StoreDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/dao/TradeDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/dao/UserDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/dao/util/GenericDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/dao/util/PageDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/entity/Activity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/entity/Commodity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/entity/Dto/Page.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/entity/Dto/Result.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/entity/Picture.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/entity/Store.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/entity/Trade.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/enums/UserEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/service/ActivityService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/service/CommodityService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/service/Impl/ActivityServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/service/Impl/CommodityServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/service/Impl/StoreServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/service/Impl/TradeServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/service/Impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/service/StoreService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/service/TradeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/util/DateTimeTypeHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/util/ListTypeHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/util/QiniuCloudUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/util/RequestSession.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/util/UserSession.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/resources/mapper/ActivityMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/resources/mapper/CommodityMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/resources/mapper/PictureMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/resources/mapper/StoreMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/resources/mapper/TradeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/resources/spring/spring-dao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/resources/spring/spring-service.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/resources/spring/spring-web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea.war" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/com/ta/framework/controller/ActivityController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/com/ta/framework/controller/CommodityController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/com/ta/framework/controller/PictureController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/com/ta/framework/controller/StoreController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/com/ta/framework/controller/TradeController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/com/ta/framework/controller/UserController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/com/ta/framework/dao/ActivityDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/com/ta/framework/dao/CommodityDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/com/ta/framework/dao/PictureDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/com/ta/framework/dao/StoreDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/com/ta/framework/dao/TradeDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/com/ta/framework/dao/UserDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/com/ta/framework/dao/util/GenericDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/com/ta/framework/dao/util/PageDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/com/ta/framework/entity/Activity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/com/ta/framework/entity/Commodity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/com/ta/framework/entity/Dto/Page.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/com/ta/framework/entity/Dto/Result.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/com/ta/framework/entity/Picture.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/com/ta/framework/entity/Store.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/com/ta/framework/entity/Trade.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/com/ta/framework/entity/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/com/ta/framework/enums/UserEnum.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/com/ta/framework/service/ActivityService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/com/ta/framework/service/CommodityService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/com/ta/framework/service/Impl/ActivityServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/com/ta/framework/service/Impl/CommodityServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/com/ta/framework/service/Impl/StoreServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/com/ta/framework/service/Impl/TradeServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/com/ta/framework/service/Impl/UserServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/com/ta/framework/service/StoreService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/com/ta/framework/service/TradeService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/com/ta/framework/service/UserService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/com/ta/framework/util/DateTimeTypeHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/com/ta/framework/util/ListTypeHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/com/ta/framework/util/QiniuCloudUtil$Ret.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/com/ta/framework/util/QiniuCloudUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/com/ta/framework/util/RequestSession.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/com/ta/framework/util/UserSession.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/mapper/ActivityMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/mapper/CommodityMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/mapper/PictureMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/mapper/StoreMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/mapper/TradeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/mapper/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/mybatis-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/spring/spring-dao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/spring/spring-service.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/spring/spring-web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/classes/test/test.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/activation-1.1.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/antlr-2.7.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/asm-3.3.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/aspectjweaver-1.8.12.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/c3p0-0.9.1.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/cglib-2.2.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/commons-beanutils-1.9.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/commons-chain-1.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/commons-codec-1.10.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/commons-collections-3.2.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/commons-email-1.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/commons-fileupload-1.2.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/commons-io-2.0.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/commons-lang-2.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/commons-lang3-3.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/commons-logging-1.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/commons-validator-1.3.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/dom4j-1.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/druid-1.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/gson-2.6.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/guava-15.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/httpclient-4.5.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/httpcore-4.4.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/httpmime-4.5.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/jackson-annotations-2.9.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/jackson-core-2.9.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/jackson-core-asl-1.9.9.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/jackson-databind-2.9.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/jackson-mapper-asl-1.9.9.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/javax.mail-1.5.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/jcl-over-slf4j-1.7.21.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/joda-time-2.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/jstl-1.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/jul-to-slf4j-1.7.21.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/log4j-over-slf4j-1.7.21.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/logback-classic-1.0.13.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/logback-core-1.0.13.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/mybatis-3.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/mybatis-spring-1.3.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/mysql-connector-java-5.1.21.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/okhttp-3.2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/okio-1.6.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/oro-2.0.8.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/qiniu-java-sdk-7.1.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/slf4j-api-1.7.21.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/spring-aop-5.0.1.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/spring-aspects-5.0.1.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/spring-beans-5.0.1.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/spring-context-5.0.1.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/spring-context-support-5.0.1.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/spring-core-5.0.1.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/spring-expression-5.0.1.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/spring-instrument-5.0.1.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/spring-jcl-5.0.1.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/spring-jdbc-5.0.1.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/spring-jms-5.0.1.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/spring-messaging-5.0.1.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/spring-orm-5.0.1.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/spring-oxm-5.0.1.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/spring-tx-5.0.1.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/spring-web-5.0.1.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/spring-webmvc-5.0.1.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/sslext-1.2-0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/struts-core-1.3.8.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/struts-taglib-1.3.8.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/struts-tiles-1.3.8.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/tomcat-jdbc-7.0.47.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/tomcat-juli-7.0.47.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/velocity-1.6.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/lib/velocity-tools-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/TradingArea/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/com/ta/framework/controller/ActivityController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/com/ta/framework/controller/CommodityController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/com/ta/framework/controller/PictureController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/com/ta/framework/controller/StoreController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/com/ta/framework/controller/TradeController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/com/ta/framework/controller/UserController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/com/ta/framework/dao/ActivityDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/com/ta/framework/dao/CommodityDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/com/ta/framework/dao/PictureDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/com/ta/framework/dao/StoreDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/com/ta/framework/dao/TradeDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/com/ta/framework/dao/UserDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/com/ta/framework/dao/util/GenericDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/com/ta/framework/dao/util/PageDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/com/ta/framework/entity/Activity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/com/ta/framework/entity/Commodity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/com/ta/framework/entity/Dto/Page.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/com/ta/framework/entity/Dto/Result.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/com/ta/framework/entity/Picture.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/com/ta/framework/entity/Store.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/com/ta/framework/entity/Trade.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/com/ta/framework/entity/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/com/ta/framework/enums/UserEnum.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/com/ta/framework/service/ActivityService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/com/ta/framework/service/CommodityService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/com/ta/framework/service/Impl/ActivityServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/com/ta/framework/service/Impl/CommodityServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/com/ta/framework/service/Impl/StoreServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/com/ta/framework/service/Impl/TradeServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/com/ta/framework/service/Impl/UserServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/com/ta/framework/service/StoreService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/com/ta/framework/service/TradeService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/com/ta/framework/service/UserService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/com/ta/framework/util/DateTimeTypeHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/com/ta/framework/util/ListTypeHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/com/ta/framework/util/QiniuCloudUtil$Ret.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/com/ta/framework/util/QiniuCloudUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/com/ta/framework/util/RequestSession.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/com/ta/framework/util/UserSession.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/mapper/ActivityMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/mapper/CommodityMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/mapper/PictureMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/mapper/StoreMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/mapper/TradeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/mapper/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/mybatis-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/spring/spring-dao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/spring/spring-service.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/spring/spring-web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/classes/test/test.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TradingArea/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="DateTimeTypeHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/util/DateTimeTypeHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ListTypeHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/util/ListTypeHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QiniuCloudUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/util/QiniuCloudUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-540">
+              <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="init.sql" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../TradingArea/sql/init.sql">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Kotlin File" />
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>COMENT</find>
+      <find>StoreId</find>
+      <find>StorePicIdList</find>
+      <find>Store</find>
+      <find>StoreName</find>
+      <find>StoreIdList</find>
+      <find>creatTime</find>
+      <find>userID</find>
+      <find>tradePage</find>
+      <find>EmployeeVO</find>
+      <find>SystemConstant.EMP_IN_SESSION</find>
+      <find>Trade</find>
+      <find>commodityprice</find>
+      <find>dicount</find>
+      <find>otherAcId</find>
+      <find>Commodity.commodity</find>
+      <find>DateTime</find>
+      <find>,typeHandler=DateTimeTypeHandler</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>COMMENT</replace>
+      <replace>CommodityPicIdList</replace>
+      <replace>Commodity</replace>
+      <replace>CommodityName</replace>
+      <replace>CommodityIdList</replace>
+      <replace>createTime</replace>
+      <replace>userId</replace>
+      <replace />
+      <replace>page</replace>
+      <replace>User</replace>
+      <replace>&quot;user&quot;</replace>
+      <replace>Activity</replace>
+      <replace>commodityPrice</replace>
+      <replace>discount</replace>
+      <replace>otherAc</replace>
+      <replace>Date</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../TradingArea" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/com/ta/framework/service/TradeService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ta/framework/service/Impl/TradeServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ta/framework/dao/util/PageDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ta/framework/entity/Dto/Page.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ta/framework/controller/StoreController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ta/framework/service/Impl/StoreServiceImpl.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ta/framework/util/UtilValidate.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ta/framework/entity/Dto/Result.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ta/framework/util/QiniuCloudUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ta/framework/entity/Picture.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ta/framework/controller/PictureController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ta/framework/controller/TradeController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ta/framework/service/TradeService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ta/framework/service/Impl/TradeServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ta/framework/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/util/RequestSession.java" />
+        <option value="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/util/UserSession.java" />
+        <option value="$PROJECT_DIR$/../TradingArea/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/../TradingArea/src/main/resources/spring/spring-web.xml" />
+        <option value="$PROJECT_DIR$/../TradingArea/src/main/resources/mapper/UserMapper.xml" />
+        <option value="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/controller/PictureController.java" />
+        <option value="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/service/TradeService.java" />
+        <option value="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/controller/TradeController.java" />
+        <option value="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/controller/StoreController.java" />
+        <option value="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/service/StoreService.java" />
+        <option value="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/entity/Vo/ActivityVo.java" />
+        <option value="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/dao/util/PageDao.java" />
+        <option value="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/service/ActivityService.java" />
+        <option value="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/entity/Dto/Page.java" />
+        <option value="$PROJECT_DIR$/../TradingArea/src/main/resources/mapper/PictureMapper.xml" />
+        <option value="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/service/Impl/TradeServiceImpl.java" />
+        <option value="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/service/CommodityService.java" />
+        <option value="$PROJECT_DIR$/../TradingArea/src/main/resources/mapper/ActivityMapper.xml" />
+        <option value="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/service/Impl/ActivityServiceImpl.java" />
+        <option value="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/service/Impl/StoreServiceImpl.java" />
+        <option value="$PROJECT_DIR$/../TradingArea/src/main/java/test/test.java" />
+        <option value="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/controller/CommodityController.java" />
+        <option value="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/entity/Activity.java" />
+        <option value="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/entity/Trade.java" />
+        <option value="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/entity/Commodity.java" />
+        <option value="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/entity/Store.java" />
+        <option value="$PROJECT_DIR$/../TradingArea/src/main/resources/mapper/CommodityMapper.xml" />
+        <option value="$PROJECT_DIR$/../TradingArea/src/main/resources/mapper/StoreMapper.xml" />
+        <option value="$PROJECT_DIR$/../TradingArea/src/main/resources/mapper/TradeMapper.xml" />
+        <option value="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/controller/ActivityController.java" />
+        <option value="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/service/Impl/CommodityServiceImpl.java" />
+        <option value="$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/util/ListTypeHandler.java" />
+        <option value="$PROJECT_DIR$/../TradingArea/pom.xml" />
+        <option value="$PROJECT_DIR$/../TradingArea/sql/init.sql" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="TradingArea Maven Webapp" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="TradingArea Maven Webapp" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="TradingArea Maven Webapp" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="41" />
+    <option name="y" value="4" />
+    <option name="width" value="1346" />
+    <option name="height" value="688" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="TradingArea" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TradingArea" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TradingArea" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TradingArea" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TradingArea" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TradingArea" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TradingArea" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TradingArea" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TradingArea" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TradingArea" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TradingArea" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TradingArea" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TradingArea" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TradingArea" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\TradingArea\src\main\webapp" />
+      <recent name="E:\TradingArea\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\TradingArea\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Unnamed">
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test.test" />
+      <module name="TradingArea" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="Unnamed" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.35" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="TradingArea:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_TradingArea" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="50228" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="TradingArea:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Tomcat Server.Unnamed" />
+      <item itemvalue="Application.test" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f0a7f7c6-531f-4491-a190-918a95fa6e85" name="Default" comment="" />
+      <created>1555047625900</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1555047625900</updated>
+      <workItem from="1555047630090" duration="491000" />
+      <workItem from="1555301649490" duration="1600000" />
+      <workItem from="1555314302876" duration="7490000" />
+      <workItem from="1555418980837" duration="5886000" />
+      <workItem from="1555768697392" duration="2519000" />
+      <workItem from="1555920504389" duration="21239000" />
+      <workItem from="1555996250732" duration="20275000" />
+      <workItem from="1556164475715" duration="10817000" />
+      <workItem from="1556248764695" duration="49573000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="119890000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <layout>
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.3290938" />
+      <window_info anchor="bottom" id="Application Servers" order="8" weight="0.3290938" />
+      <window_info anchor="right" id="Maven Projects" order="3" weight="0.21104388" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info id="Structure" order="1" sideWeight="0.28817734" side_tool="true" weight="0.21104388" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5478548" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32838285" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="bottom" id="Java Enterprise" order="7" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.38118812" />
+      <window_info anchor="bottom" id="Spring" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3289256" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7118227" visible="true" weight="0.21104388" />
+      <window_info id="Web" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32838285" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="49" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../TradingArea/src/main/resources/spring/spring-web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="32" column="11" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TradingArea/src/main/resources/spring/spring-service.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/mybatis/mybatis/3.4.2/mybatis-3.4.2.jar!/org/apache/ibatis/type/TypeHandler.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/mybatis/mybatis-spring/1.3.1/mybatis-spring-1.3.1.jar!/org/mybatis/spring/SqlSessionTemplate.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="205" selection-start-line="205" selection-end-line="205" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/util/LinkedHashMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="588" selection-start-line="588" selection-end-line="588" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/spring-web/5.0.1.RELEASE/spring-web-5.0.1.RELEASE.jar!/org/springframework/web/context/request/AbstractRequestAttributes.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/dao/util/PageDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="853" selection-start-line="853" selection-end-line="853" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/dao/PictureDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/spring-webmvc/5.0.1.RELEASE/spring-webmvc-5.0.1.RELEASE.jar!/org/springframework/web/servlet/FrameworkServlet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="487" selection-start-line="487" selection-end-line="487" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/dao/TradeDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/service/TradeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/util/List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-701">
+          <caret line="110" column="17" selection-start-line="110" selection-start-column="17" selection-end-line="110" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TradingArea/src/main/resources/mapper/PictureMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-808">
+          <caret line="3" column="67" selection-start-line="3" selection-start-column="67" selection-end-line="3" selection-end-column="67" />
+          <folding>
+            <element signature="n#select#1;n#mapper#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TradingArea/src/main/resources/mapper/UserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="23" column="60" selection-start-line="23" selection-start-column="60" selection-end-line="23" selection-end-column="60" />
+          <folding>
+            <element signature="n#sql#0;n#mapper#0;n#!!top" />
+            <element signature="n#update#0;n#mapper#0;n#!!top" />
+            <element signature="n#delete#0;n#mapper#0;n#!!top" />
+            <element signature="n#select#0;n#mapper#0;n#!!top" />
+            <element signature="n#select#1;n#mapper#0;n#!!top" />
+            <element signature="n#select#2;n#mapper#0;n#!!top" />
+            <element signature="n#select#3;n#mapper#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/spring-web/5.0.1.RELEASE/spring-web-5.0.1.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="129" selection-start-line="129" selection-end-line="129" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/spring-webmvc/5.0.1.RELEASE/spring-webmvc-5.0.1.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="569" selection-start-line="569" selection-end-line="569" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/spring-webmvc/5.0.1.RELEASE/spring-webmvc-5.0.1.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="478" selection-start-line="478" selection-end-line="478" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/service/CommodityService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/service/Impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/service/Impl/StoreServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/service/Impl/TradeServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="479">
+          <caret line="47" column="18" lean-forward="true" selection-start-line="27" selection-start-column="8" selection-end-line="47" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TradingArea/src/main/java/test/test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="7" column="67" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/entity/Dto/Page.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1203#1204#0" expanded="true" />
+            <element signature="e#1243#1244#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/service/ActivityService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/entity/Activity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="112" column="56" lean-forward="true" selection-start-line="111" selection-start-column="3" selection-end-line="112" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/entity/Commodity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="29" column="139" selection-start-line="29" selection-start-column="139" selection-end-line="29" selection-end-column="139" />
+          <folding>
+            <element signature="e#2271#2272#0" expanded="true" />
+            <element signature="e#2305#2306#0" expanded="true" />
+            <element signature="e#2360#2361#0" expanded="true" />
+            <element signature="e#2406#2407#0" expanded="true" />
+            <element signature="e#2446#2447#0" expanded="true" />
+            <element signature="e#2482#2483#0" expanded="true" />
+            <element signature="e#2540#2541#0" expanded="true" />
+            <element signature="e#2590#2591#0" expanded="true" />
+            <element signature="e#2632#2633#0" expanded="true" />
+            <element signature="e#2669#2670#0" expanded="true" />
+            <element signature="e#2730#2731#0" expanded="true" />
+            <element signature="e#2782#2783#0" expanded="true" />
+            <element signature="e#2827#2828#0" expanded="true" />
+            <element signature="e#2864#2865#0" expanded="true" />
+            <element signature="e#2928#2929#0" expanded="true" />
+            <element signature="e#2980#2981#0" expanded="true" />
+            <element signature="e#3022#3023#0" expanded="true" />
+            <element signature="e#3060#3061#0" expanded="true" />
+            <element signature="e#3122#3123#0" expanded="true" />
+            <element signature="e#3176#3177#0" expanded="true" />
+            <element signature="e#3314#3315#0" expanded="true" />
+            <element signature="e#3347#3348#0" expanded="true" />
+            <element signature="e#3500#3501#0" expanded="true" />
+            <element signature="e#3544#3545#0" expanded="true" />
+            <element signature="e#3679#3680#0" expanded="true" />
+            <element signature="e#3709#3710#0" expanded="true" />
+            <element signature="e#3347#3348#0" expanded="true" />
+            <element signature="e#3385#3386#0" expanded="true" />
+            <element signature="e#3435#3436#0" expanded="true" />
+            <element signature="e#3474#3475#0" expanded="true" />
+            <element signature="e#3545#3546#0" expanded="true" />
+            <element signature="e#3601#3602#0" expanded="true" />
+            <element signature="e#3653#3654#0" expanded="true" />
+            <element signature="e#3694#3695#0" expanded="true" />
+            <element signature="e#3860#3861#0" expanded="true" />
+            <element signature="e#3888#3889#0" expanded="true" />
+            <element signature="e#3929#3930#0" expanded="true" />
+            <element signature="e#3963#3964#0" expanded="true" />
+            <element signature="e#4002#4003#0" expanded="true" />
+            <element signature="e#4035#4036#0" expanded="true" />
+            <element signature="e#4089#4090#0" expanded="true" />
+            <element signature="e#4133#4134#0" expanded="true" />
+            <element signature="e#4177#4178#0" expanded="true" />
+            <element signature="e#4213#4214#0" expanded="true" />
+            <element signature="e#4275#4276#0" expanded="true" />
+            <element signature="e#4325#4326#0" expanded="true" />
+            <element signature="e#4361#4362#0" expanded="true" />
+            <element signature="e#4391#4392#0" expanded="true" />
+            <element signature="e#4439#4440#0" expanded="true" />
+            <element signature="e#4477#4478#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/entity/Picture.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/entity/Trade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="98" column="31" selection-start-line="98" selection-start-column="31" selection-end-line="98" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/entity/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-27">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TradingArea/src/main/resources/mapper/StoreMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="12" column="52" selection-start-line="12" selection-start-column="52" selection-end-line="12" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TradingArea/src/main/resources/mapper/TradeMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="51" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/entity/Store.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="51" selection-start-line="2" selection-start-column="51" selection-end-line="2" selection-end-column="51" />
+          <folding>
+            <element signature="e#1381#1382#0" expanded="true" />
+            <element signature="e#1411#1412#0" expanded="true" />
+            <element signature="e#1458#1459#0" expanded="true" />
+            <element signature="e#1496#1497#0" expanded="true" />
+            <element signature="e#1532#1533#0" expanded="true" />
+            <element signature="e#1564#1565#0" expanded="true" />
+            <element signature="e#1614#1615#0" expanded="true" />
+            <element signature="e#1656#1657#0" expanded="true" />
+            <element signature="e#1692#1693#0" expanded="true" />
+            <element signature="e#1724#1725#0" expanded="true" />
+            <element signature="e#1774#1775#0" expanded="true" />
+            <element signature="e#1816#1817#0" expanded="true" />
+            <element signature="e#1853#1854#0" expanded="true" />
+            <element signature="e#1886#1887#0" expanded="true" />
+            <element signature="e#1938#1939#0" expanded="true" />
+            <element signature="e#1982#1983#0" expanded="true" />
+            <element signature="e#2022#2023#0" expanded="true" />
+            <element signature="e#2058#2059#0" expanded="true" />
+            <element signature="e#2116#2117#0" expanded="true" />
+            <element signature="e#2166#2167#0" expanded="true" />
+            <element signature="e#2204#2205#0" expanded="true" />
+            <element signature="e#2238#2239#0" expanded="true" />
+            <element signature="e#2292#2293#0" expanded="true" />
+            <element signature="e#2338#2339#0" expanded="true" />
+            <element signature="e#2376#2377#0" expanded="true" />
+            <element signature="e#2409#2410#0" expanded="true" />
+            <element signature="e#2462#2463#0" expanded="true" />
+            <element signature="e#2506#2507#0" expanded="true" />
+            <element signature="e#2636#2637#0" expanded="true" />
+            <element signature="e#2669#2670#0" expanded="true" />
+            <element signature="e#2814#2815#0" expanded="true" />
+            <element signature="e#2858#2859#0" expanded="true" />
+            <element signature="e#2985#2986#0" expanded="true" />
+            <element signature="e#3015#3016#0" expanded="true" />
+            <element signature="e#3292#3293#0" expanded="true" />
+            <element signature="e#3320#3321#0" expanded="true" />
+            <element signature="e#3361#3362#0" expanded="true" />
+            <element signature="e#3395#3396#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TradingArea/src/main/resources/mapper/ActivityMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/service/Impl/ActivityServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-783">
+          <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/util/Date.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2484">
+          <caret line="453" column="23" selection-start-line="453" selection-start-column="23" selection-end-line="453" selection-end-column="23" />
+          <folding>
+            <element signature="e#6390#6391#0" expanded="true" />
+            <element signature="e#6438#6439#0" expanded="true" />
+            <element signature="e#6844#6845#0" expanded="true" />
+            <element signature="e#6875#6876#0" expanded="true" />
+            <element signature="e#7577#7578#0" expanded="true" />
+            <element signature="e#7625#7626#0" expanded="true" />
+            <element signature="e#8526#8527#0" expanded="true" />
+            <element signature="e#8578#8579#0" expanded="true" />
+            <element signature="e#10720#10721#0" expanded="true" />
+            <element signature="e#10750#10751#0" expanded="true" />
+            <element signature="e#28620#28621#0" expanded="true" />
+            <element signature="e#28671#28672#0" expanded="true" />
+            <element signature="e#29442#29443#0" expanded="true" />
+            <element signature="e#29506#29507#0" expanded="true" />
+            <element signature="e#30042#30043#0" expanded="true" />
+            <element signature="e#30120#30121#0" expanded="true" />
+            <element signature="e#31971#31972#0" expanded="true" />
+            <element signature="e#32021#32022#0" expanded="true" />
+            <element signature="e#32819#32820#0" expanded="true" />
+            <element signature="e#32872#32873#0" expanded="true" />
+            <element signature="e#33584#33585#0" expanded="true" />
+            <element signature="e#33655#33656#0" expanded="true" />
+            <element signature="e#34244#34245#0" expanded="true" />
+            <element signature="e#34289#34290#0" expanded="true" />
+            <element signature="e#34885#34886#0" expanded="true" />
+            <element signature="e#34934#34935#0" expanded="true" />
+            <element signature="e#35418#35419#0" expanded="true" />
+            <element signature="e#35465#35466#0" expanded="true" />
+            <element signature="e#36078#36079#0" expanded="true" />
+            <element signature="e#36131#36132#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/text/DateFormat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="360" column="16" selection-start-line="360" selection-start-column="16" selection-end-line="360" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TradingArea/src/main/resources/mapper/CommodityMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/service/Impl/CommodityServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-25">
+          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/controller/ActivityController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="33" column="69" selection-start-line="33" selection-start-column="69" selection-end-line="33" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1231#1232#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/controller/CommodityController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="49" column="20" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/controller/TradeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="24" column="47" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#774#775#0" expanded="true" />
+            <element signature="e#827#828#0" expanded="true" />
+            <element signature="e#988#989#0" expanded="true" />
+            <element signature="e#1049#1050#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/controller/StoreController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="18" column="40" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/controller/PictureController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="26" column="37" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/util/function/Function.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="48" column="6" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TradingArea/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="783">
+          <caret line="398" column="26" selection-start-line="398" selection-start-column="26" selection-end-line="398" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/util/DateTimeTypeHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/util/ListTypeHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TradingArea/src/main/java/com/ta/framework/util/QiniuCloudUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-540">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TradingArea/sql/init.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>TradingArea:war</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>TradingArea</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ta.framework.dao.PictureDao">
+    <resultMap id="resultMap" type="com.ta.framework.entity.Picture">
+        <id column="PictureId" property="pictureId"></id>
+        <result column="PictureWay" property="pictureWay"></result>
+    </resultMap>
+
+    <sql id="all_column">
+        PictureId,
+        PictureWay
+    </sql>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="pojo.pictureId" parameterType="com.ta.framework.entity.Picture">
+        INSERT INTO picture
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.pictureWay != null"> PictureWay, </if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.pictureWay != null"> #{pojo.pictureWay}, </if>
+        </trim>
+    </insert>
+
+    <update id="update">
+        UPDATE picture
+        <trim prefix="SET" suffixOverrides="," >
+            <if test="pojo.pictureWay != null"> PictureWay =  #{pojo.pictureWay}, </if>
+        </trim>
+        WHERE PictureId = #{pojo.pictureId}
+    </update>
+
+    <delete id="delete">
+        DELETE FROM Picture
+        WHERE PictureId = #{pojo.pictureId}
+    </delete>
+
+    <select id="select" resultMap="resultMap">
+        SELECT <include refid="all_column" />
+        FROM Picture
+        <where>
+            <if test="pojo.pictureId != null"> AND PictureId = #{pojo.pictureId} </if>
+        </where>
+    </select>
+
+    <select id="selectById" resultMap="resultMap" parameterType="int">
+        SELECT <include refid="all_column" />
+        FROM Picture
+        WHERE PictureId = #{id}
+    </select>
+
+</mapper>
