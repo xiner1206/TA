@@ -2,9 +2,11 @@ package com.ta.framework.service.Impl;
 
 import com.ta.framework.dao.PictureDao;
 import com.ta.framework.dao.StoreDao;
+import com.ta.framework.dao.UserDao;
 import com.ta.framework.entity.Dto.Page;
 import com.ta.framework.entity.Picture;
 import com.ta.framework.entity.Store;
+import com.ta.framework.entity.User;
 import com.ta.framework.service.StoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,6 +22,8 @@ public class StoreServiceImpl implements StoreService {
     private StoreDao storeDao;
     @Autowired
     private PictureDao pictureDao;
+    @Autowired
+    private UserDao userDao;
 
     @Override
     public Page<Store> select(Page<Store> page) {
@@ -62,9 +66,21 @@ public class StoreServiceImpl implements StoreService {
 
     @Override
     public int addAndUpdateStore(Store store) {
-        if(store.getStoreId() == null || store.getStoreId() == 0)
+        if(store.getStoreId() == null || store.getStoreId() == 0) {
+            addUser(store);
             return storeDao.insert(store);
-        else
+        }
+        else {
+            addUser(store);
             return storeDao.update(store);
+        }
+    }
+
+    public int  addUser(Store store){
+        List<User> users = userDao.select(new User(store.getUser().getUserNum()));
+        if(users.size() != 0)
+            return 0;
+        store.getUser().setUserState(3);
+        return userDao.insert(store.getUser());
     }
 }

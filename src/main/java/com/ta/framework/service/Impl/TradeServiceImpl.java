@@ -2,15 +2,16 @@ package com.ta.framework.service.Impl;
 
 import com.ta.framework.dao.PictureDao;
 import com.ta.framework.dao.TradeDao;
+import com.ta.framework.dao.UserDao;
 import com.ta.framework.entity.Dto.Page;
 import com.ta.framework.entity.Picture;
 import com.ta.framework.entity.Trade;
+import com.ta.framework.entity.User;
 import com.ta.framework.service.TradeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 @Service
@@ -21,6 +22,9 @@ public class TradeServiceImpl implements TradeService {
 
     @Autowired
     private PictureDao pictureDao;
+
+    @Autowired
+    private UserDao userDao;
 
 
     @Override
@@ -63,9 +67,22 @@ public class TradeServiceImpl implements TradeService {
 
     @Override
     public int addAndUpdateTrade(Trade trade) {
-        if(trade.getTradeId() == null || trade.getTradeId() == 0)
+        if(trade.getTradeId() == null || trade.getTradeId() == 0) {
+            addUser(trade);
             return tradeDao.insert(trade);
-        else
+        }
+        else{
+            addUser(trade);
             return tradeDao.update(trade);
+        }
+
+    }
+
+    public int  addUser(Trade trade){
+        List<User> users = userDao.select(new User(trade.getUser().getUserNum()));
+        if(users.size() != 0)
+            return 0;
+        trade.getUser().setUserState(2);
+        return userDao.insert(trade.getUser());
     }
 }

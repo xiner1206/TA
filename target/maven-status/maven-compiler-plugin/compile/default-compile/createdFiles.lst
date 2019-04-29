@@ -35,6 +35,5 @@ com\ta\framework\service\Impl\UserServiceImpl.class
 com\ta\framework\util\ListTypeHandler.class
 com\ta\framework\entity\Commodity.class
 com\ta\framework\entity\Trade.class
-test\test.class
 com\ta\framework\service\StoreService.class
 com\ta\framework\entity\Store.class

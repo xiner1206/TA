@@ -49,10 +49,4 @@ public class UserController {
         UserSession.removeUser();
         return "OK";
     }
-
-    @RequestMapping(value = "/user/test",method = RequestMethod.GET)
-    @ResponseBody
-    public User userTest(){
-        return UserSession.getUser();
-    }
 }
