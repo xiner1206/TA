@@ -2,6 +2,7 @@ com\ta\framework\service\Impl\CommodityServiceImpl.class
 com\ta\framework\entity\Picture.class
 com\ta\framework\entity\User.class
 com\ta\framework\controller\CommodityController.class
+com\ta\framework\util\CORSFilter.class
 com\ta\framework\service\Impl\StoreServiceImpl.class
 com\ta\framework\dao\TradeDao.class
 com\ta\framework\util\DateTimeTypeHandler.class
