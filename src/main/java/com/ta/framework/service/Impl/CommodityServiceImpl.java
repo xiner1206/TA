@@ -24,6 +24,10 @@ public class CommodityServiceImpl implements CommodityService {
 
     @Override
     public int addAndUpdateCommodity(Commodity commodity) {
+        List<Integer> commodityIdList = new ArrayList<>();
+        commodity.setCommodityPicIdList(commodityIdList);
+        commodityIdList.clear();
+        commodityIdList.addAll(getPicIdList(commodity));
         if(commodity.getCommodityId() == null || commodity.getCommodityId() == 0)
             return commodityDao.insert(commodity);
         else
@@ -45,11 +49,11 @@ public class CommodityServiceImpl implements CommodityService {
         List<Commodity> commodityList = commodityDao.selectByPage(pg);
         for (Commodity commodity:commodityList) {
             List<Integer> picIdList = commodity.getCommodityPicIdList();
+            List<Picture> commodityPicList = new ArrayList<>();
             for (Integer picId: picIdList) {
-                List<Picture> commodityPicList = new ArrayList<>();
                 commodityPicList.add(pictureDao.selectById(picId));
-                commodity.setCommodityPicList(commodityPicList);
             }
+            commodity.setCommodityPicList(commodityPicList);
             if (commodity.getDiscountAc() != null && commodity.getDiscountAc().getActivityDiscount() != 10) {
                 if(new Date().after(commodity.getDiscountAc().getCreateTime())&& new Date().before(commodity.getDiscountAc().getEndTime())) {
 
@@ -74,5 +78,14 @@ public class CommodityServiceImpl implements CommodityService {
             page.setPageNum(1);
         }
         return commodityDao.countByPage(page);
+    }
+
+    public List<Integer> getPicIdList(Commodity commodity){
+        List<Integer> listid = new ArrayList<>();
+        for(Picture picture:commodity.getCommodityPicList()){
+            listid.add(picture.getPictureId());
+            pictureDao.update(picture);
+        }
+        return  listid;
     }
 }

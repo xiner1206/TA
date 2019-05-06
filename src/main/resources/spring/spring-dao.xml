@@ -18,7 +18,7 @@
 		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/ta"></property>
 		<property name="driverClass" value="com.mysql.jdbc.Driver"></property>
 		<property name="user" value="root"></property>
-		<property name="password" value="root"></property>
+		<property name="password" value="fan81539938"></property>
 	</bean>
 
 	<!-- 3.配置SqlSessionFactory对象 -->

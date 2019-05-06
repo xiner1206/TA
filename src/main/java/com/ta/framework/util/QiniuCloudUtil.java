@@ -32,7 +32,7 @@ public class QiniuCloudUtil {
     // 密钥
     private static final Auth auth = Auth.create(ACCESS_KEY, SECRET_KEY);
 
-    private static final String DOMAIN = "pqip3etku.bkt.clouddn.com";
+    private static final String DOMAIN = "http://pqip3etku.bkt.clouddn.com/";
 
     private static final String style = "imageView2/1/w/200/h/200/q/75";
 

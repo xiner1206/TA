@@ -3,29 +3,39 @@
 <mapper namespace="com.ta.framework.dao.PictureDao">
     <resultMap id="resultMap" type="com.ta.framework.entity.Picture">
         <id column="PictureId" property="pictureId"></id>
-        <result column="PictureWay" property="pictureWay"></result>
+        <result column="Url" property="url"></result>
+        <result column="UId" property="uid"></result>
+        <result column="Status" property="status"></result>
     </resultMap>
 
     <sql id="all_column">
         PictureId,
-        PictureWay
+        Url,
+        UId,
+        Status
     </sql>
 
     <insert id="insert" useGeneratedKeys="true" keyProperty="pojo.pictureId" parameterType="com.ta.framework.entity.Picture">
         INSERT INTO picture
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="pojo.pictureWay != null"> PictureWay, </if>
+            <if test="pojo.url != null"> Url, </if>
+            <if test="pojo.uid != null"> UId, </if>
+            <if test="pojo.status != null"> Status, </if>
         </trim>
         VALUES
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="pojo.pictureWay != null"> #{pojo.pictureWay}, </if>
+            <if test="pojo.url != null"> #{pojo.url}, </if>
+            <if test="pojo.uid != null"> #{pojo.uid}, </if>
+            <if test="pojo.status != null"> #{pojo.status}, </if>
         </trim>
     </insert>
 
     <update id="update">
         UPDATE picture
         <trim prefix="SET" suffixOverrides="," >
-            <if test="pojo.pictureWay != null"> PictureWay =  #{pojo.pictureWay}, </if>
+            <if test="pojo.url != null"> Url =  #{pojo.url}, </if>
+            <if test="pojo.uid != null"> UId = #{pojo.uid}, </if>
+            <if test="pojo.status != null"> Status =  #{pojo.status}, </if>
         </trim>
         WHERE PictureId = #{pojo.pictureId}
     </update>
@@ -40,6 +50,9 @@
         FROM Picture
         <where>
             <if test="pojo.pictureId != null"> AND PictureId = #{pojo.pictureId} </if>
+            <if test="pojo.url != null">AND Url =  #{pojo.url} </if>
+            <if test="pojo.uid != null">AND UId = #{pojo.uid} </if>
+            <if test="pojo.status != null">AND Status =  #{pojo.status} </if>
         </where>
     </select>
 

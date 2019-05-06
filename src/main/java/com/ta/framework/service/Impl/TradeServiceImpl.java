@@ -42,11 +42,11 @@ public class TradeServiceImpl implements TradeService {
         List<Trade> tradeList = tradeDao.selectByPage(pg);
         for (Trade trade:tradeList) {
             List<Integer> picIdList = trade.getTradePicIdList();
+            List<Picture> tradePicList = new ArrayList<>();
             for (Integer picId: picIdList) {
-                List<Picture> tradePicList = new ArrayList<>();
                 tradePicList.add(pictureDao.selectById(picId));
-                trade.setTradePicList(tradePicList);
             }
+            trade.setTradePicList(tradePicList);
         }
         pg.setList(tradeList);
         return pg;
@@ -67,6 +67,10 @@ public class TradeServiceImpl implements TradeService {
 
     @Override
     public int addAndUpdateTrade(Trade trade) {
+        List<Integer> tradeIdList = new ArrayList<>();
+        trade.setTradePicIdList(tradeIdList);
+        tradeIdList.clear();
+        tradeIdList.addAll(getPicIdList(trade));
         if(trade.getTradeId() == null || trade.getTradeId() == 0) {
             addUser(trade);
             return tradeDao.insert(trade);
@@ -79,10 +83,25 @@ public class TradeServiceImpl implements TradeService {
     }
 
     public int  addUser(Trade trade){
-        List<User> users = userDao.select(new User(trade.getUser().getUserNum()));
-        if(users.size() != 0)
+        if(trade.getUser()!=null ) {
+            List<User> users = userDao.select(new User(trade.getUser().getUserNum()));
+            if (users.size() != 0)
+                return 0;
+            else {
+                trade.getUser().setUserState(2);
+                return userDao.insert(trade.getUser());
+            }
+        }else{
             return 0;
-        trade.getUser().setUserState(2);
-        return userDao.insert(trade.getUser());
+        }
+    }
+
+    public List<Integer> getPicIdList(Trade trade){
+        List<Integer> listid = new ArrayList<>();
+        for(Picture picture:trade.getTradePicList()){
+            listid.add(picture.getPictureId());
+            pictureDao.update(picture);
+        }
+        return  listid;
     }
 }

@@ -90,16 +90,16 @@
         FROM Commodity
         <where>
             <if test="pojo.commodityId != null"> AND CommodityId = #{pojo.commodityId} </if>
-            <if test="pojo.commodityName != null"> AND CommodityName = #{pojo.commodityName}, </if>
-            <if test="pojo.commodityState != null"> AND CommodityState = #{pojo.commodityState}, </if>
-            <if test="pojo.commodityPrice != null"> AND CommodityPrice = #{pojo.commodityPrice}, </if>
-            <if test="pojo.commodityRemark != null"> AND CommodityRemark = #{pojo.commodityRemark}, </if>
-            <if test="pojo.createTime != null"> AND CreateTime = #{pojo.createTime}, </if>
-            <if test="pojo.endTime != null"> AND EndTime = #{pojo.endTime}, </if>
-            <if test="pojo.commodityPicIdList != null">AND CommodityPicIdList = #{pojo.commodityPicIdList,typeHandler=ListTypeHandler}, </if>
-            <if test="pojo.store != null and pojo.store.storeId != 0"> AND StoreId = #{pojo.store.storeId}, </if>
-            <if test="pojo.discountAc != null and pojo.discountAcId != 0">AND DiscountAcId = #{pojo.discountAc.activityId}, </if>
-            <if test="pojo.otherAc != null and pojo.otherAcId != 0">AND OtherAcId = #{pojo.otherAc.activityId}, </if>
+            <if test="pojo.commodityName != null"> AND CommodityName = #{pojo.commodityName} </if>
+            <if test="pojo.commodityState != null"> AND CommodityState = #{pojo.commodityState} </if>
+            <if test="pojo.commodityPrice != null"> AND CommodityPrice = #{pojo.commodityPrice} </if>
+            <if test="pojo.commodityRemark != null"> AND CommodityRemark = #{pojo.commodityRemark} </if>
+            <if test="pojo.createTime != null"> AND CreateTime = #{pojo.createTime} </if>
+            <if test="pojo.endTime != null"> AND EndTime = #{pojo.endTime} </if>
+            <if test="pojo.commodityPicIdList != null">AND CommodityPicIdList = #{pojo.commodityPicIdList,typeHandler=ListTypeHandler} </if>
+            <if test="pojo.store != null and pojo.store.storeId != 0"> AND StoreId = #{pojo.store.storeId} </if>
+            <if test="pojo.discountAc != null and pojo.discountAcId != 0">AND DiscountAcId = #{pojo.discountAc.activityId} </if>
+            <if test="pojo.otherAc != null and pojo.otherAcId != 0">AND OtherAcId = #{pojo.otherAc.activityId} </if>
         </where>
     </select>
 
@@ -115,12 +115,12 @@
         <where>
             <if test="page.condition != null">
                 <if test="page.condition.commodityId != null"> AND CommodityId = #{page.condition.commodityId} </if>
-                <if test="page.condition.commodityName != null"> AND CommodityName = #{page.condition.commodityName}, </if>
-                <if test="page.condition.commodityState != null"> AND CommodityState = #{page.condition.commodityState}, </if>
-                <if test="page.condition.commodityPrice != null"> AND CommodityPrice = #{page.condition.commodityPrice}, </if>
-                <if test="page.condition.commodityRemark != null"> AND CommodityRemark = #{page.condition.commodityRemark}, </if>
-                <if test="page.condition.createTime != null"> AND CreateTime = #{page.condition.createTime.typeHandler=DateTimeTypeHandler}, </if>
-                <if test="page.condition.endTime != null"> AND EndTime = #{page.condition.endTime}, </if>
+                <if test="page.condition.commodityName != null"> AND CommodityName = #{page.condition.commodityName} </if>
+                <if test="page.condition.commodityState != null"> AND CommodityState = #{page.condition.commodityState} </if>
+                <if test="page.condition.commodityPrice != null"> AND CommodityPrice = #{page.condition.commodityPrice} </if>
+                <if test="page.condition.commodityRemark != null"> AND CommodityRemark = #{page.condition.commodityRemark} </if>
+                <if test="page.condition.createTime != null"> AND CreateTime = #{page.condition.createTime.typeHandler=DateTimeTypeHandler} </if>
+                <if test="page.condition.endTime != null"> AND EndTime = #{page.condition.endTime} </if>
                 <if test="page.condition.commodityPicIdList != null">AND CommodityPicIdList = #{page.condition.commodityPicIdList,typeHandler=ListTypeHandler}, </if>
                 <if test="page.condition.store != null and page.condition.store.storeId != 0"> AND StoreId = #{page.condition.store.storeId}, </if>
                 <if test="page.condition.discountAc != null and page.condition.discountAc.activityId != 0"> DiscountAcId = #{page.condition.discountAc.activityId }, </if>
@@ -136,17 +136,17 @@
         FROM Commodity
         <where>
             <if test="page.condition != null">
-                <if test="page.condition.commodityId != null"> AND CommodityId = #{page.condition.commodityId} </if>
+                <if test="page.condition.commodityId != null"> AND CommodityId = #{page.condition.commodityId}, </if>
                 <if test="page.condition.commodityName != null"> AND CommodityName = #{page.condition.commodityName}, </if>
                 <if test="page.condition.commodityState != null"> AND CommodityState = #{page.condition.commodityState}, </if>
                 <if test="page.condition.commodityPrice != null"> AND CommodityPrice = #{page.condition.commodityPrice}, </if>
                 <if test="page.condition.commodityRemark != null"> AND CommodityRemark = #{page.condition.commodityRemark}, </if>
                 <if test="page.condition.createTime != null"> AND CreateTime = #{page.condition.createTime}, </if>
                 <if test="page.condition.endTime != null"> AND EndTime = #{page.condition.endTime}, </if>
-                <if test="page.condition.commodityPicIdList != null">AND CommodityPicIdList = #{page.condition.commodityPicIdList,typeHandler=ListTypeHandler}, </if>
-                <if test="page.condition.store != null and page.condition.store.storeId != 0"> AND StoreId = #{page.condition.store.storeId}, </if>
-                <if test="page.condition.discountAc != null and page.condition.discountAc.activityId != 0"> DiscountAcId = #{page.condition.discountAc.activityId }, </if>
-                <if test="page.condition.otherAc != null and page.condition.otherAc.activityId != 0"> OtherAcId = #{page.condition.otherAc.activityId }, </if>
+                <if test="page.condition.commodityPicIdList != null">AND CommodityPicIdList = #{page.condition.commodityPicIdList,typeHandler=ListTypeHandler} </if>
+                <if test="page.condition.store != null and page.condition.store.storeId != 0"> AND StoreId = #{page.condition.store.storeId} </if>
+                <if test="page.condition.discountAc != null and page.condition.discountAc.activityId != 0"> DiscountAcId = #{page.condition.discountAc.activityId } </if>
+                <if test="page.condition.otherAc != null and page.condition.otherAc.activityId != 0"> OtherAcId = #{page.condition.otherAc.activityId } </if>
 
             </if>
         </where>

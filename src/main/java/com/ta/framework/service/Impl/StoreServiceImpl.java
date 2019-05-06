@@ -40,11 +40,11 @@ public class StoreServiceImpl implements StoreService {
         List<Store> storeList = storeDao.selectByPage(pg);
         for (Store store:storeList) {
             List<Integer> picIdList = store.getStorePicIdList();
+            List<Picture> storePicList = new ArrayList<>();
             for (Integer picId: picIdList) {
-                List<Picture> storePicList = new ArrayList<>();
                 storePicList.add(pictureDao.selectById(picId));
-                store.setStorePicList(storePicList);
             }
+            store.setStorePicList(storePicList);
         }
         pg.setList(storeList);
         return pg;
@@ -66,6 +66,11 @@ public class StoreServiceImpl implements StoreService {
 
     @Override
     public int addAndUpdateStore(Store store) {
+
+        List<Integer> storeIdList = new ArrayList<>();
+        store.setStorePicIdList(storeIdList);
+        storeIdList.clear();
+        storeIdList.addAll(getPicIdList(store));
         if(store.getStoreId() == null || store.getStoreId() == 0) {
             addUser(store);
             return storeDao.insert(store);
@@ -76,11 +81,26 @@ public class StoreServiceImpl implements StoreService {
         }
     }
 
-    public int  addUser(Store store){
-        List<User> users = userDao.select(new User(store.getUser().getUserNum()));
-        if(users.size() != 0)
+    public int  addUser(Store store) {
+        if (store.getUser() != null){
+                List<User> users = userDao.select(new User(store.getUser().getUserNum()));
+            if (users.size() != 0)
+                return 0;
+            else {
+                store.getUser().setUserState(3);
+                return userDao.insert(store.getUser());
+            }
+        }else{
             return 0;
-        store.getUser().setUserState(3);
-        return userDao.insert(store.getUser());
+        }
+    }
+
+    public List<Integer> getPicIdList(Store store){
+        List<Integer> listid = new ArrayList<>();
+        for(Picture picture:store.getStorePicList()){
+            listid.add(picture.getPictureId());
+            pictureDao.update(picture);
+        }
+        return  listid;
     }
 }

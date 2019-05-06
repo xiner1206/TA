@@ -14,7 +14,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.UUID;
 
 @Controller
@@ -33,7 +35,8 @@ public class PictureController {
             return result;
         }
         try {
-            byte[] bytes = image.getBytes();
+
+            byte[] bytes = pic(image);
             String imageName = UUID.randomUUID().toString();
             QiniuCloudUtil qiniuUtil = new QiniuCloudUtil();
             try {
@@ -42,7 +45,7 @@ public class PictureController {
                 result.setMsg("文件上传成功");
                 result.setData(new Picture(url));
                 //路径存入数据库
-                P.setPictureWay(url);
+                P.setUrl(url);
                 pictureDao.insert(P);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -53,6 +56,22 @@ public class PictureController {
             result.setMsg("文件上传发生异常！");
             return result;
         }
+    }
+
+    public byte[] pic(MultipartFile image) throws IOException {
+        byte[] buffer = null;
+        InputStream inputStream = image.getInputStream();
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        byte[] b = new byte[1024];
+        int n;
+        while ((n = inputStream.read(b)) != -1)
+        {
+            bos.write(b, 0, n);
+        }
+        inputStream.close();
+        bos.close();
+        buffer = bos.toByteArray();
+        return buffer;
     }
 
 }

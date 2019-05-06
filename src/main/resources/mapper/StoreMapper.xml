@@ -94,17 +94,17 @@
         FROM Store
         <where>
             <if test="pojo.storeId != null"> AND StoreId = #{pojo.storeId} </if>
-            <if test="pojo.storeName != null"> AND StoreName = #{pojo.storeName}, </if>
-            <if test="pojo.storeType != null"> AND StoreType = #{pojo.storeType}, </if>
-            <if test="pojo.storePhone != null"> AND StorePhone = #{pojo.storePhone}, </if>
-            <if test="pojo.storeRemark != null"> AND StoreRemark = #{pojo.storeRemark}, </if>
-            <if test="pojo.storeLocation != null"> AND StoreLocation = #{pojo.storeLocation}, </if>
-            <if test="pojo.storeState != null"> AND StoreState = #{pojo.storeState}, </if>
-            <if test="pojo.createTime != null"> AND CreateTime = #{pojo.createTime}, </if>
-            <if test="pojo.endTime != null"> AND EndTime = #{pojo.endTime}, </if>
-            <if test="pojo.storePicIdList != null">AND StorePicIdList = #{pojo.storePicIdList,typeHandler=ListTypeHandler}, </if>
-            <if test="pojo.user != null and pojo.user.userId != 0"> AND UserId = #{pojo.user.userId}, </if>
-            <if test="pojo.trade != null and pojo.trade.tradeId != 0"> AND TradeId = #{pojo.trade.tradeId}, </if>
+            <if test="pojo.storeName != null"> AND StoreName = #{pojo.storeName} </if>
+            <if test="pojo.storeType != null"> AND StoreType = #{pojo.storeType} </if>
+            <if test="pojo.storePhone != null"> AND StorePhone = #{pojo.storePhone} </if>
+            <if test="pojo.storeRemark != null"> AND StoreRemark = #{pojo.storeRemark} </if>
+            <if test="pojo.storeLocation != null"> AND StoreLocation = #{pojo.storeLocation} </if>
+            <if test="pojo.storeState != null"> AND StoreState = #{pojo.storeState} </if>
+            <if test="pojo.createTime != null"> AND CreateTime = #{pojo.createTime} </if>
+            <if test="pojo.endTime != null"> AND EndTime = #{pojo.endTime} </if>
+            <if test="pojo.storePicIdList != null">AND StorePicIdList = #{pojo.storePicIdList,typeHandler=ListTypeHandler} </if>
+            <if test="pojo.user != null and pojo.user.userId != 0"> AND UserId = #{pojo.user.userId} </if>
+            <if test="pojo.trade != null and pojo.trade.tradeId != 0"> AND TradeId = #{pojo.trade.tradeId} </if>
         </where>
     </select>
 
@@ -120,17 +120,17 @@
         <where>
             <if test="page.condition != null">
                 <if test="page.condition.storeId != null"> AND StoreId = #{page.condition.storeId} </if>
-                <if test="page.condition.storeName != null"> AND StoreName = #{page.condition.storeName}, </if>
-                <if test="page.condition.storeType != null"> AND StoreType = #{page.condition.storeType}, </if>
-                <if test="page.condition.storePhone != null"> AND StorePhone = #{page.condition.storePhone}, </if>
-                <if test="page.condition.storeRemark != null"> AND StoreRemark = #{page.condition.storeRemark}, </if>
-                <if test="page.condition.storeLocation != null"> AND StoreLocation = #{page.condition.storeLocation}, </if>
-                <if test="page.condition.storeState != null"> AND StoreState = #{page.condition.storeState}, </if>
-                <if test="page.condition.createTime != null"> AND CreateTime = #{page.condition.createTime}, </if>
-                <if test="page.condition.endTime != null"> AND EndTime = #{page.condition.endTime}, </if>
-                <if test="page.condition.storePicIdList != null">AND StorePicIdList = #{page.condition.storePicIdList,typeHandler=ListTypeHandler}, </if>
-                <if test="page.condition.user != null and page.condition.user.userId != 0"> AND UserId = #{page.condition.user.userId}, </if>
-                <if test="page.condition.trade != null and page.condition.trade.tradeId != 0"> AND TradeId = #{page.condition.trade.tradeId}, </if>
+                <if test="page.condition.storeName != null"> AND StoreName = #{page.condition.storeName} </if>
+                <if test="page.condition.storeType != null"> AND StoreType = #{page.condition.storeType} </if>
+                <if test="page.condition.storePhone != null"> AND StorePhone = #{page.condition.storePhone} </if>
+                <if test="page.condition.storeRemark != null"> AND StoreRemark = #{page.condition.storeRemark} </if>
+                <if test="page.condition.storeLocation != null"> AND StoreLocation = #{page.condition.storeLocation} </if>
+                <if test="page.condition.storeState != null"> AND StoreState = #{page.condition.storeState} </if>
+                <if test="page.condition.createTime != null"> AND CreateTime = #{page.condition.createTime} </if>
+                <if test="page.condition.endTime != null"> AND EndTime = #{page.condition.endTime} </if>
+                <if test="page.condition.storePicIdList != null">AND StorePicIdList = #{page.condition.storePicIdList,typeHandler=ListTypeHandler} </if>
+                <if test="page.condition.user != null and page.condition.user.userId != 0"> AND UserId = #{page.condition.user.userId} </if>
+                <if test="page.condition.trade != null and page.condition.trade.tradeId != 0"> AND TradeId = #{page.condition.trade.tradeId} </if>
             </if>
         </where>
         ORDER BY StoreId DESC
@@ -143,17 +143,17 @@
         <where>
             <if test="page.condition != null">
                 <if test="page.condition.storeId != null"> AND StoreId = #{page.condition.storeId} </if>
-                <if test="page.condition.storeName != null"> AND StoreName = #{page.condition.storeName}, </if>
-                <if test="page.condition.storeType != null"> AND StoreType = #{page.condition.storeType}, </if>
-                <if test="page.condition.storePhone != null"> AND StorePhone = #{page.condition.storePhone}, </if>
-                <if test="page.condition.storeRemark != null"> AND StoreRemark = #{page.condition.storeRemark}, </if>
-                <if test="page.condition.storeLocation != null"> AND StoreLocation = #{page.condition.storeLocation}, </if>
-                <if test="page.condition.storeState != null"> AND StoreState = #{page.condition.storeState}, </if>
-                <if test="page.condition.createTime != null"> AND CreateTime = #{page.condition.createTime}, </if>
-                <if test="page.condition.endTime != null"> AND EndTime = #{page.condition.endTime}, </if>
-                <if test="page.condition.storePicIdList != null">AND StorePicIdList = #{page.condition.storePicIdList,typeHandler=ListTypeHandler}, </if>
-                <if test="page.condition.user != null and page.condition.user.userId != 0"> AND UserId #{page.condition.user.userId}, </if>
-                <if test="page.condition.trade != null and page.condition.trade.tradeId != 0"> AND TradeId = #{page.condition.trade.tradeId}, </if>
+                <if test="page.condition.storeName != null"> AND StoreName = #{page.condition.storeName} </if>
+                <if test="page.condition.storeType != null"> AND StoreType = #{page.condition.storeType} </if>
+                <if test="page.condition.storePhone != null"> AND StorePhone = #{page.condition.storePhone} </if>
+                <if test="page.condition.storeRemark != null"> AND StoreRemark = #{page.condition.storeRemark} </if>
+                <if test="page.condition.storeLocation != null"> AND StoreLocation = #{page.condition.storeLocation} </if>
+                <if test="page.condition.storeState != null"> AND StoreState = #{page.condition.storeState} </if>
+                <if test="page.condition.createTime != null"> AND CreateTime = #{page.condition.createTime} </if>
+                <if test="page.condition.endTime != null"> AND EndTime = #{page.condition.endTime} </if>
+                <if test="page.condition.storePicIdList != null">AND StorePicIdList = #{page.condition.storePicIdList,typeHandler=ListTypeHandler} </if>
+                <if test="page.condition.user != null and page.condition.user.userId != 0"> AND UserId #{page.condition.user.userId} </if>
+                <if test="page.condition.trade != null and page.condition.trade.tradeId != 0"> AND TradeId = #{page.condition.trade.tradeId} </if>
             </if>
         </where>
     </select>

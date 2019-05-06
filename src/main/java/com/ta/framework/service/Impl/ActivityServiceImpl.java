@@ -42,11 +42,11 @@ public class ActivityServiceImpl implements ActivityService {
         List<Activity> activityList = activityDao.selectByPage(pg);
         for (Activity activity:activityList) {
             List<Integer> picIdList =activity.getActivityPicIdList();
+            List<Picture> activityPicList = new ArrayList<>();
             for (Integer picId: picIdList) {
-                List<Picture> activityPicList = new ArrayList<>();
                 activityPicList.add(pictureDao.selectById(picId));
-                activity.setActivityPicList(activityPicList);
             }
+            activity.setActivityPicList(activityPicList);
         }
         pg.setList(activityList);
         return pg;
@@ -68,7 +68,7 @@ public class ActivityServiceImpl implements ActivityService {
     public int addAndUpdateActivity(Activity activity) {
         Commodity commodity = new Commodity();
         List<Integer> commodityIdList = new ArrayList<>();
-        commodityIdList = activity.getCommodityIdList();
+        commodityIdList.addAll(activity.getCommodityIdList());
         if(commodityIdList.size() !=0 ){
             for (Integer i:commodityIdList ){
                 if(activity.getActivityDiscount() == 10){
@@ -81,9 +81,22 @@ public class ActivityServiceImpl implements ActivityService {
                 commodityService.addAndUpdateCommodity(commodity);
             }
         }
+        List<Integer> activityIdList = new ArrayList<>();
+        activity.setActivityPicIdList(activityIdList);
+        activityIdList.clear();
+        activityIdList.addAll(getPicIdList(activity));
         if(activity.getActivityId() == null || activity.getActivityId() == 0)
             return activityDao.insert(activity);
         else
             return activityDao.update(activity);
+    }
+
+    public List<Integer> getPicIdList(Activity activity){
+        List<Integer> listid = new ArrayList<>();
+        for(Picture picture:activity.getActivityPicList()){
+            listid.add(picture.getPictureId());
+            pictureDao.update(picture);
+        }
+        return  listid;
     }
 }
