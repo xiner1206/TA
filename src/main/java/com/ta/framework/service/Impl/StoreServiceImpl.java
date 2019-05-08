@@ -66,11 +66,12 @@ public class StoreServiceImpl implements StoreService {
 
     @Override
     public int addAndUpdateStore(Store store) {
-
-        List<Integer> storeIdList = new ArrayList<>();
-        store.setStorePicIdList(storeIdList);
-        storeIdList.clear();
-        storeIdList.addAll(getPicIdList(store));
+        if(store.getStorePicList()!=null) {
+            List<Integer> storeIdList = new ArrayList<>();
+            store.setStorePicIdList(storeIdList);
+            storeIdList.clear();
+            storeIdList.addAll(getPicIdList(store));
+        }
         if(store.getStoreId() == null || store.getStoreId() == 0) {
             addUser(store);
             return storeDao.insert(store);
@@ -97,9 +98,11 @@ public class StoreServiceImpl implements StoreService {
 
     public List<Integer> getPicIdList(Store store){
         List<Integer> listid = new ArrayList<>();
-        for(Picture picture:store.getStorePicList()){
-            listid.add(picture.getPictureId());
-            pictureDao.update(picture);
+        if(store.getStorePicList()!=null) {
+            for (Picture picture : store.getStorePicList()) {
+                listid.add(picture.getPictureId());
+                pictureDao.update(picture);
+            }
         }
         return  listid;
     }

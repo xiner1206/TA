@@ -67,10 +67,12 @@ public class TradeServiceImpl implements TradeService {
 
     @Override
     public int addAndUpdateTrade(Trade trade) {
-        List<Integer> tradeIdList = new ArrayList<>();
-        trade.setTradePicIdList(tradeIdList);
-        tradeIdList.clear();
-        tradeIdList.addAll(getPicIdList(trade));
+        if(trade.getTradePicList()!=null) {
+            List<Integer> tradeIdList = new ArrayList<>();
+            trade.setTradePicIdList(tradeIdList);
+            tradeIdList.clear();
+            tradeIdList.addAll(getPicIdList(trade));
+        }
         if(trade.getTradeId() == null || trade.getTradeId() == 0) {
             addUser(trade);
             return tradeDao.insert(trade);
@@ -83,7 +85,7 @@ public class TradeServiceImpl implements TradeService {
     }
 
     public int  addUser(Trade trade){
-        if(trade.getUser()!=null ) {
+        if(trade.getUser()!=null &&trade.getUser().getUserNum()!=null) {
             List<User> users = userDao.select(new User(trade.getUser().getUserNum()));
             if (users.size() != 0)
                 return 0;
@@ -98,9 +100,11 @@ public class TradeServiceImpl implements TradeService {
 
     public List<Integer> getPicIdList(Trade trade){
         List<Integer> listid = new ArrayList<>();
-        for(Picture picture:trade.getTradePicList()){
-            listid.add(picture.getPictureId());
-            pictureDao.update(picture);
+        if(trade.getTradePicList()!=null) {
+            for (Picture picture : trade.getTradePicList()) {
+                listid.add(picture.getPictureId());
+                pictureDao.update(picture);
+            }
         }
         return  listid;
     }

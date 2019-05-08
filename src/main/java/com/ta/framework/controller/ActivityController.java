@@ -3,6 +3,7 @@ package com.ta.framework.controller;
 import com.ta.framework.dao.ActivityDao;
 import com.ta.framework.entity.Activity;
 import com.ta.framework.entity.Dto.Page;
+import com.ta.framework.entity.Vo.tradeAc;
 import com.ta.framework.service.ActivityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -35,4 +36,9 @@ public class ActivityController {
         return  activityService.select(activity);
     }
 
+    @RequestMapping(value = "/activity/acPage",method = RequestMethod.POST)
+    @ResponseBody
+    public Page<tradeAc> acPage(@RequestBody Page<tradeAc> tradeAc) {
+        return  activityService.pageTradeAc(tradeAc);
+    }
 }

@@ -24,10 +24,12 @@ public class CommodityServiceImpl implements CommodityService {
 
     @Override
     public int addAndUpdateCommodity(Commodity commodity) {
-        List<Integer> commodityIdList = new ArrayList<>();
-        commodity.setCommodityPicIdList(commodityIdList);
-        commodityIdList.clear();
-        commodityIdList.addAll(getPicIdList(commodity));
+        if(commodity.getCommodityPicList()!=null) {
+            List<Integer> commodityIdList = new ArrayList<>();
+            commodity.setCommodityPicIdList(commodityIdList);
+            commodityIdList.clear();
+            commodityIdList.addAll(getPicIdList(commodity));
+        }
         if(commodity.getCommodityId() == null || commodity.getCommodityId() == 0)
             return commodityDao.insert(commodity);
         else
@@ -82,9 +84,11 @@ public class CommodityServiceImpl implements CommodityService {
 
     public List<Integer> getPicIdList(Commodity commodity){
         List<Integer> listid = new ArrayList<>();
-        for(Picture picture:commodity.getCommodityPicList()){
-            listid.add(picture.getPictureId());
-            pictureDao.update(picture);
+        if(commodity.getCommodityPicList()!=null) {
+            for (Picture picture : commodity.getCommodityPicList()) {
+                listid.add(picture.getPictureId());
+                pictureDao.update(picture);
+            }
         }
         return  listid;
     }

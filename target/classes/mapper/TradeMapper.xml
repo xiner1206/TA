@@ -40,7 +40,7 @@
             <if test="pojo.tradeRemark != null"> TradeRemark, </if>
             <if test="pojo.tradeLocation != null"> TradeLocation, </if>
             <if test="pojo.tradePicIdList != null"> TradePicIdList, </if>
-            <if test="pojo.user != null and pojo.user.userId != 0"> UserId, </if>
+            <if test="pojo.user != null and pojo.user.userId != null"> UserId, </if>
         </trim>
         values
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -53,7 +53,7 @@
             <if test="pojo.tradeRemark != null"> #{pojo.tradeRemark}, </if>
             <if test="pojo.tradeLocation != null"> #{pojo.tradeLocation}, </if>
             <if test="pojo.tradePicIdList != null"> #{pojo.tradePicIdList,typeHandler=ListTypeHandler}, </if>
-            <if test="pojo.user != null and pojo.user.userId != 0">  #{pojo.user.userId}, </if>
+            <if test="pojo.user != null and pojo.user.userId != null">  #{pojo.user.userId}, </if>
         </trim>
     </insert>
 
@@ -68,7 +68,7 @@
             <if test="pojo.tradeRemark != null"> TradeRemark = #{pojo.tradeRemark}, </if>
             <if test="pojo.tradeLocation != null"> TradeLocation = #{pojo.tradeLocation}, </if>
             <if test="pojo.tradePicIdList != null"> TradePicIdList = #{pojo.tradePicIdList,typeHandler=ListTypeHandler}, </if>
-            <if test="pojo.user != null and pojo.user.userId != 0"> UserId = #{pojo.user.userId}, </if>
+            <if test="pojo.user != null and pojo.user.userId != null"> UserId = #{pojo.user.userId}, </if>
         </trim>
         WHERE TradeId = #{pojo.tradeId}
     </update>
@@ -91,7 +91,7 @@
             <if test="pojo.tradeRemark != null"> AND TradeRemark = #{pojo.tradeRemark} </if>
             <if test="pojo.tradeLocation != null"> AND TradeLocation = #{pojo.tradeLocation} </if>
             <if test="pojo.tradePicIdList != null"> AND TradePicIdList = #{pojo.tradePicIdList,typeHandler=ListTypeHandler} </if>
-            <if test="pojo.user != null and pojo.user.userId != 0"> AND UserId = #{pojo.user.userId} </if>
+            <if test="pojo.user != null and pojo.user.userId != null"> AND UserId = #{pojo.user.userId} </if>
         </where>
     </select>
 
@@ -115,13 +115,12 @@
                 <if test="page.condition.tradeRemark != null"> AND TradeRemark = #{page.condition.tradeRemark} </if>
                 <if test="page.condition.tradeLocation != null"> AND TradeLocation = #{page.condition.tradeLocation} </if>
                 <if test="page.condition.tradePicIdList != null"> AND TradePicIdList = #{page.condition.tradePicIdList,typeHandler=ListTypeHandler} </if>
-                <if test="page.condition.user != null and page.condition.user.userId != 0"> AND UserId = #{page.condition.user.userId} </if>
+                <if test="page.condition.user != null and page.condition.user.userId != null"> AND UserId = #{page.condition.user.userId} </if>
             </if>
         </where>
         ORDER BY TradeId DESC
         LIMIT #{page.startIndex}, #{page.pageSize}
     </select>
-
 
     <select id="countByPage" resultType="int" parameterType="com.ta.framework.entity.Dto.Page">
         SELECT count(0)
@@ -137,7 +136,7 @@
                 <if test="page.condition.tradeRemark != null"> AND TradeRemark = #{page.condition.tradeRemark} </if>
                 <if test="page.condition.tradeLocation != null"> AND TradeLocation = #{page.condition.tradeLocation} </if>
                 <if test="page.condition.tradePicIdList != null"> AND TradePicIdList = #{page.condition.tradePicIdList,typeHandler=ListTypeHandler} </if>
-                <if test="page.condition.user != null and page.condition.user.userId != 0"> AND UserId = #{page.condition.user.userId} </if>
+                <if test="page.condition.user != null and page.condition.user.userId != null"> AND UserId = #{page.condition.user.userId} </if>
             </if>
         </where>
     </select>

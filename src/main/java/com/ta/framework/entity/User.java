@@ -7,7 +7,7 @@ public class User {
     private String userNum;
     private String userPassword;
     private Integer userState;
-
+    private Integer tosId;
     public User() {
 
     }
@@ -23,11 +23,11 @@ public class User {
         this.userNum = userNum;
     }
 
-    public Integer getuserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setuserId(Integer userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 
@@ -61,5 +61,13 @@ public class User {
 
     public void setUserState(Integer userState) {
         this.userState = userState;
+    }
+
+    public Integer getTosId() {
+        return tosId;
+    }
+
+    public void setTosId(Integer tosId) {
+        this.tosId = tosId;
     }
 }

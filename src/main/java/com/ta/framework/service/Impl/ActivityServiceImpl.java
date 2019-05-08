@@ -6,6 +6,7 @@ import com.ta.framework.entity.Activity;
 import com.ta.framework.entity.Commodity;
 import com.ta.framework.entity.Dto.Page;
 import com.ta.framework.entity.Picture;
+import com.ta.framework.entity.Vo.tradeAc;
 import com.ta.framework.service.ActivityService;
 import com.ta.framework.service.CommodityService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,7 @@ public class ActivityServiceImpl implements ActivityService {
 
     @Autowired
     private CommodityService commodityService;
+
 
 
     @Override
@@ -66,25 +68,29 @@ public class ActivityServiceImpl implements ActivityService {
 
     @Override
     public int addAndUpdateActivity(Activity activity) {
-        Commodity commodity = new Commodity();
-        List<Integer> commodityIdList = new ArrayList<>();
-        commodityIdList.addAll(activity.getCommodityIdList());
-        if(commodityIdList.size() !=0 ){
-            for (Integer i:commodityIdList ){
-                if(activity.getActivityDiscount() == 10){
-                    commodity.setCommodityId(i);
-                    commodity.setOtherAc(activity);
-                }else{
-                    commodity.setCommodityId(i);
-                    commodity.setDiscountAc(activity);
+        if(activity.getCommodityIdList()!=null) {
+            Commodity commodity = new Commodity();
+            List<Integer> commodityIdList = new ArrayList<>();
+            commodityIdList.addAll(activity.getCommodityIdList());
+            if (commodityIdList.size() != 0) {
+                for (Integer i : commodityIdList) {
+                    if (activity.getActivityDiscount() == 10) {
+                        commodity.setCommodityId(i);
+                        commodity.setOtherAc(activity);
+                    } else {
+                        commodity.setCommodityId(i);
+                        commodity.setDiscountAc(activity);
+                    }
+                    commodityService.addAndUpdateCommodity(commodity);
                 }
-                commodityService.addAndUpdateCommodity(commodity);
             }
         }
-        List<Integer> activityIdList = new ArrayList<>();
-        activity.setActivityPicIdList(activityIdList);
-        activityIdList.clear();
-        activityIdList.addAll(getPicIdList(activity));
+        if(activity.getActivityPicList()!=null) {
+            List<Integer> activityIdList = new ArrayList<>();
+            activity.setActivityPicIdList(activityIdList);
+            activityIdList.clear();
+            activityIdList.addAll(getPicIdList(activity));
+        }
         if(activity.getActivityId() == null || activity.getActivityId() == 0)
             return activityDao.insert(activity);
         else
@@ -93,10 +99,41 @@ public class ActivityServiceImpl implements ActivityService {
 
     public List<Integer> getPicIdList(Activity activity){
         List<Integer> listid = new ArrayList<>();
-        for(Picture picture:activity.getActivityPicList()){
-            listid.add(picture.getPictureId());
-            pictureDao.update(picture);
+        if(activity.getActivityPicList()!=null) {
+            for (Picture picture : activity.getActivityPicList()) {
+                listid.add(picture.getPictureId());
+                pictureDao.update(picture);
+            }
         }
         return  listid;
+    }
+
+    @Override
+    public Integer countTradeAc(Page<tradeAc> page) {
+        assert page.getPageSize() > 0;
+        if(page.getCondition() == null) {
+            page.setCondition(new tradeAc());
+        }
+        if(page.getPageNum() == null || page.getPageNum() <= 0) {
+            page.setPageNum(1);
+        }
+        return activityDao.countTradeAc(page);
+    }
+
+    @Override
+    public Page<tradeAc> pageTradeAc(Page<tradeAc> page) {
+        assert page.getPageSize() > 0;
+        if(page.getCondition() == null) {
+            page.setCondition(new tradeAc());
+        }
+        if(page.getPageNum() == null || page.getPageNum() <= 0) {
+            page.setPageNum(1);
+        }
+        page.setTotalRecord(countTradeAc(page));
+        Page<tradeAc> pg = new Page<>(page.getPageNum(),page.getPageSize(),page.getTotalRecord());
+        pg.setCondition(page.getCondition());
+        List<tradeAc> activityList = activityDao.pageTradeAc(pg);
+        pg.setList(activityList);
+        return pg;
     }
 }

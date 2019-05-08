@@ -46,8 +46,8 @@
             <if test="pojo.createTime != null"> CreateTime, </if>
             <if test="pojo.endTime != null"> EndTime, </if>
             <if test="pojo.storePicIdList != null"> StorePicIdList, </if>
-            <if test="pojo.user != null and pojo.user.userId != 0"> UserId, </if>
-            <if test="pojo.trade != null and pojo.trade.tradeId != 0"> TradeId, </if>
+            <if test="pojo.user != null and pojo.user.userId != null"> UserId, </if>
+            <if test="pojo.trade != null and pojo.trade.tradeId != null"> TradeId, </if>
         </trim>
         values
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -61,13 +61,13 @@
             <if test="pojo.createTime != null"> #{pojo.createTime}, </if>
             <if test="pojo.endTime != null"> #{pojo.endTime}, </if>
             <if test="pojo.storePicIdList != null"> #{pojo.storePicIdList,typeHandler=ListTypeHandler}, </if>
-            <if test="pojo.user != null and pojo.user.userId != 0">  #{pojo.user.userId}, </if>
-            <if test="pojo.trade != null and pojo.trade.tradeId != 0"> #{pojo.trade.tradeId}, </if>
+            <if test="pojo.user != null and pojo.user.userId != null">  #{pojo.user.userId}, </if>
+            <if test="pojo.trade != null and pojo.trade.tradeId != null"> #{pojo.trade.tradeId}, </if>
         </trim>
     </insert>
 
     <update id="update">
-        UPDATE Trade
+        UPDATE Store
         <trim prefix="SET" suffixOverrides="," >
             <if test="pojo.storeName != null"> StoreName = #{pojo.storeName}, </if>
             <if test="pojo.storeType != null"> StoreType = #{pojo.storeType}, </if>
@@ -78,8 +78,8 @@
             <if test="pojo.createTime != null"> CreateTime = #{pojo.createTime}, </if>
             <if test="pojo.endTime != null"> EndTime = #{pojo.endTime}, </if>
             <if test="pojo.storePicIdList != null"> StorePicIdList = #{pojo.storePicIdList,typeHandler=ListTypeHandler}, </if>
-            <if test="pojo.user != null and pojo.user.userId != 0"> UserId = #{pojo.user.userId}, </if>
-            <if test="pojo.trade != null and pojo.trade.tradeId != 0"> TradeId = #{pojo.trade.tradeId}, </if>
+            <if test="pojo.user != null and pojo.user.userId != null"> UserId = #{pojo.user.userId}, </if>
+            <if test="pojo.trade != null and pojo.trade.tradeId != null"> TradeId = #{pojo.trade.tradeId}, </if>
         </trim>
         WHERE StoreId = #{pojo.storeId}
     </update>
@@ -103,8 +103,8 @@
             <if test="pojo.createTime != null"> AND CreateTime = #{pojo.createTime} </if>
             <if test="pojo.endTime != null"> AND EndTime = #{pojo.endTime} </if>
             <if test="pojo.storePicIdList != null">AND StorePicIdList = #{pojo.storePicIdList,typeHandler=ListTypeHandler} </if>
-            <if test="pojo.user != null and pojo.user.userId != 0"> AND UserId = #{pojo.user.userId} </if>
-            <if test="pojo.trade != null and pojo.trade.tradeId != 0"> AND TradeId = #{pojo.trade.tradeId} </if>
+            <if test="pojo.user != null and pojo.user.userId != null"> AND UserId = #{pojo.user.userId} </if>
+            <if test="pojo.trade != null and pojo.trade.tradeId != null"> AND TradeId = #{pojo.trade.tradeId} </if>
         </where>
     </select>
 
@@ -129,8 +129,8 @@
                 <if test="page.condition.createTime != null"> AND CreateTime = #{page.condition.createTime} </if>
                 <if test="page.condition.endTime != null"> AND EndTime = #{page.condition.endTime} </if>
                 <if test="page.condition.storePicIdList != null">AND StorePicIdList = #{page.condition.storePicIdList,typeHandler=ListTypeHandler} </if>
-                <if test="page.condition.user != null and page.condition.user.userId != 0"> AND UserId = #{page.condition.user.userId} </if>
-                <if test="page.condition.trade != null and page.condition.trade.tradeId != 0"> AND TradeId = #{page.condition.trade.tradeId} </if>
+                <if test="page.condition.user != null and page.condition.user.userId != null"> AND UserId = #{page.condition.user.userId} </if>
+                <if test="page.condition.trade != null and page.condition.trade.tradeId != null"> AND TradeId = #{page.condition.trade.tradeId} </if>
             </if>
         </where>
         ORDER BY StoreId DESC
@@ -152,8 +152,8 @@
                 <if test="page.condition.createTime != null"> AND CreateTime = #{page.condition.createTime} </if>
                 <if test="page.condition.endTime != null"> AND EndTime = #{page.condition.endTime} </if>
                 <if test="page.condition.storePicIdList != null">AND StorePicIdList = #{page.condition.storePicIdList,typeHandler=ListTypeHandler} </if>
-                <if test="page.condition.user != null and page.condition.user.userId != 0"> AND UserId #{page.condition.user.userId} </if>
-                <if test="page.condition.trade != null and page.condition.trade.tradeId != 0"> AND TradeId = #{page.condition.trade.tradeId} </if>
+                <if test="page.condition.user != null and page.condition.user.userId != null"> AND UserId = #{page.condition.user.userId} </if>
+                <if test="page.condition.trade != null and page.condition.trade.tradeId != null"> AND TradeId = #{page.condition.trade.tradeId} </if>
             </if>
         </where>
     </select>

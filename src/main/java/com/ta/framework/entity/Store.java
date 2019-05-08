@@ -40,6 +40,7 @@ public class Store {
         this.trade = trade;
     }
 
+
     public Integer getStoreId() {
         return storeId;
     }

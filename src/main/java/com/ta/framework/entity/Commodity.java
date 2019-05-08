@@ -23,11 +23,14 @@ public class Commodity {
     private Activity discountAc;
     private BigDecimal discountPrice;
     private Activity otherAc;
+    private List<BigDecimal> priceInterval;
+    private BigDecimal startPrice;
+    private BigDecimal endPrice;
 
     public Commodity() {
     }
 
-    public Commodity(String commodityName, Integer commodityState, BigDecimal commodityPrice, String commodityRemark, Date createTime, Date endTime, List<Picture> commodityPicList, List<Integer> commodityPicIdList, Store store, Activity discountAc, BigDecimal discountPrice, Activity otherAc) {
+    public Commodity(String commodityName, Integer commodityState, BigDecimal commodityPrice, String commodityRemark, Date createTime, Date endTime, List<Picture> commodityPicList, List<Integer> commodityPicIdList, Store store, Activity discountAc, BigDecimal discountPrice, Activity otherAc,List<BigDecimal> priceInterval) {
         this.commodityName = commodityName;
         this.commodityState = commodityState;
         this.commodityPrice = commodityPrice;
@@ -40,6 +43,7 @@ public class Commodity {
         this.discountAc = discountAc;
         this.discountPrice = discountPrice;
         this.otherAc = otherAc;
+        this.priceInterval = priceInterval;
     }
 
     public Commodity(String commodityName, Integer commodityState, BigDecimal commodityPrice, String commodityRemark, Date createTime, Date endTime, List<Picture> commodityPicList, List<Integer> commodityPicIdList, Store store, Commodity discountAc, Commodity otherAc) {
@@ -165,5 +169,29 @@ public class Commodity {
 
     public void setOtherAc(Activity otherAc) {
         this.otherAc = otherAc;
+    }
+
+    public List<BigDecimal> getPriceInterval() {
+        return priceInterval;
+    }
+
+    public void setPriceInterval(List<BigDecimal> priceInterval) {
+        this.priceInterval = priceInterval;
+    }
+
+    public BigDecimal getStartPrice() {
+        return startPrice;
+    }
+
+    public void setStartPrice(BigDecimal startPrice) {
+        this.startPrice = startPrice;
+    }
+
+    public BigDecimal getEndPrice() {
+        return endPrice;
+    }
+
+    public void setEndPrice(BigDecimal endPrice) {
+        this.endPrice = endPrice;
     }
 }

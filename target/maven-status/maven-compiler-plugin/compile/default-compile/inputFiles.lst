@@ -9,6 +9,7 @@ E:\TradingArea\src\main\java\com\ta\framework\util\QiniuCloudUtil.java
 E:\TradingArea\src\main\java\com\ta\framework\controller\StoreController.java
 E:\TradingArea\src\main\java\com\ta\framework\util\CORSFilter.java
 E:\TradingArea\src\main\java\com\ta\framework\dao\util\GenericDao.java
+E:\TradingArea\src\main\java\com\ta\framework\entity\Vo\tradeAc.java
 E:\TradingArea\src\main\java\com\ta\framework\entity\Picture.java
 E:\TradingArea\src\main\java\com\ta\framework\util\ListTypeHandler.java
 E:\TradingArea\src\main\java\com\ta\framework\service\TradeService.java

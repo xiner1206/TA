@@ -5,6 +5,7 @@ com\ta\framework\controller\CommodityController.class
 com\ta\framework\util\CORSFilter.class
 com\ta\framework\service\Impl\StoreServiceImpl.class
 com\ta\framework\dao\TradeDao.class
+com\ta\framework\entity\Vo\tradeAc.class
 com\ta\framework\util\DateTimeTypeHandler.class
 com\ta\framework\service\Impl\TradeServiceImpl.class
 com\ta\framework\util\UserSession.class
