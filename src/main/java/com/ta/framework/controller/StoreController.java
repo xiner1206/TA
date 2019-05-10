@@ -27,4 +27,11 @@ public class StoreController {
     public Integer addAndUpdateStore(@RequestBody Store store){
         return storeService.addAndUpdateStore(store);
     }
+
+    @RequestMapping(value = "/store/onePic",method = RequestMethod.POST)
+    @ResponseBody
+    public Page<Store> onePic(@RequestBody Page<Store> page){
+        return storeService.selectOnePic(page);
+    }
+
 }

@@ -28,4 +28,10 @@ public class TradeController {
          return tradeService.addAndUpdateTrade(trade);
     }
 
+    @RequestMapping(value = "/trade/onePic",method = RequestMethod.POST)
+    @ResponseBody
+    public Page<Trade> onePic(@RequestBody Page<Trade> tradePage){
+        return tradeService.selectOnePic(tradePage);
+    }
+
 }

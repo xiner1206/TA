@@ -37,6 +37,41 @@ public class CommodityServiceImpl implements CommodityService {
     }
 
     @Override
+    public Page<Commodity> selectOnePic(Page<Commodity> page) {
+        assert page.getPageSize() > 0;
+        if(page.getCondition() == null) {
+            page.setCondition(new Commodity());
+        }
+        if(page.getPageNum() == null || page.getPageNum() <= 0) {
+            page.setPageNum(1);
+        }
+        page.setTotalRecord(countByPage(page));
+        Page<Commodity> pg = new Page<>(page.getPageNum(),page.getPageSize(),page.getTotalRecord());
+        page.getCondition().setCommodityState(1);
+        pg.setCondition(page.getCondition());
+        List<Commodity> commodityList = commodityDao.selectByPage(pg);
+        for (Commodity commodity:commodityList) {
+            List<Integer> picIdList = commodity.getCommodityPicIdList();
+            List<Picture> commodityPicList = new ArrayList<>();
+            for (Integer picId: picIdList) {
+                commodityPicList.add(pictureDao.selectById(picId));
+            }
+            commodity.setStore(null);
+            commodity.setUrl(commodityPicList.get(0).getUrl());
+//            if (commodity.getDiscountAc() != null && commodity.getDiscountAc().getActivityDiscount() != 10) {
+//                if(new Date().after(commodity.getDiscountAc().getCreateTime())&& new Date().before(commodity.getDiscountAc().getEndTime())) {
+//                    BigDecimal discount = BigDecimal.valueOf((float) commodity.getDiscountAc().getActivityDiscount() / 10);
+//                    BigDecimal discountPrice = commodity.getCommodityPrice().multiply(discount);
+//                    commodity.setDiscountPrice(discountPrice);
+//                } else
+//                    commodity.setDiscountPrice(null);
+//            }
+        }
+        pg.setList(commodityList);
+        return pg;
+    }
+
+    @Override
     public Page<Commodity> select(Page<Commodity> page) {
         assert page.getPageSize() > 0;
         if(page.getCondition() == null) {

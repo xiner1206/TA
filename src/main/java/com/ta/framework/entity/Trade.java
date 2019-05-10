@@ -25,7 +25,7 @@ public class Trade {
     private List<Picture> tradePicList;
     private List<Integer> tradePicIdList;
     private User user;
-
+    private String url;
 
     public Trade() {
     }
@@ -142,6 +142,12 @@ public class Trade {
         this.tradePicIdList = tradePicIdList;
     }
 
+    public String getUrl() {
+        return url;
+    }
 
+    public void setUrl(String url) {
+        this.url = url;
+    }
 }
 

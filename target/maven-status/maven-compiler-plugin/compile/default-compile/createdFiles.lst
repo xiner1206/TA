@@ -25,6 +25,7 @@ com\ta\framework\dao\util\PageDao.class
 com\ta\framework\dao\StoreDao.class
 com\ta\framework\dao\PictureDao.class
 com\ta\framework\util\QiniuCloudUtil$Ret.class
+com\ta\framework\entity\Vo\tradeOnePic.class
 com\ta\framework\service\CommodityService.class
 com\ta\framework\util\QiniuCloudUtil.class
 com\ta\framework\dao\ActivityDao.class

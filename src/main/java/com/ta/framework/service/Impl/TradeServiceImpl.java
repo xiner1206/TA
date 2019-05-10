@@ -7,6 +7,7 @@ import com.ta.framework.entity.Dto.Page;
 import com.ta.framework.entity.Picture;
 import com.ta.framework.entity.Trade;
 import com.ta.framework.entity.User;
+import com.ta.framework.entity.Vo.tradeOnePic;
 import com.ta.framework.service.TradeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -107,5 +108,31 @@ public class TradeServiceImpl implements TradeService {
             }
         }
         return  listid;
+    }
+
+    @Override
+    public Page<Trade> selectOnePic(Page<Trade> page) {
+        assert page.getPageSize() > 0;
+        if (page.getCondition() == null) {
+            page.setCondition(new Trade());
+        }
+        if (page.getPageNum() == null || page.getPageNum() <= 0) {
+            page.setPageNum(1);
+        }
+        page.setTotalRecord(countByPage(page));
+        Page<Trade> pg = new Page<>(page.getPageNum(), page.getPageSize(), page.getTotalRecord());
+        page.getCondition().setTradeState(1);
+        pg.setCondition(page.getCondition());
+        List<Trade> tradeList = tradeDao.selectByPage(pg);
+        for (Trade trade : tradeList) {
+            List<Integer> picIdList = trade.getTradePicIdList();
+            List<Picture> tradePicList = new ArrayList<>();
+            for (Integer picId : picIdList) {
+                tradePicList.add(pictureDao.selectById(picId));
+            }
+            trade.setUrl(tradePicList.get(0).getUrl());
+        }
+        pg.setList(tradeList);
+        return pg;
     }
 }

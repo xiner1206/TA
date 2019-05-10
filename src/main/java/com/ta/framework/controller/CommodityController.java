@@ -40,4 +40,10 @@ public class CommodityController {
         return  commodityService.select(commodity);
     }
 
+    @RequestMapping(value = "/commodity/onePic",method = RequestMethod.POST)
+    @ResponseBody
+    public Page<Commodity> onePic(@RequestBody Page<Commodity> commodityPage){
+        return commodityService.selectOnePic(commodityPage);
+    }
+
 }

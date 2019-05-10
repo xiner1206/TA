@@ -34,6 +34,7 @@ E:\TradingArea\src\main\java\com\ta\framework\entity\User.java
 E:\TradingArea\src\main\java\com\ta\framework\controller\ActivityController.java
 E:\TradingArea\src\main\java\com\ta\framework\controller\TradeController.java
 E:\TradingArea\src\main\java\com\ta\framework\dao\TradeDao.java
+E:\TradingArea\src\main\java\com\ta\framework\entity\Vo\tradeOnePic.java
 E:\TradingArea\src\main\java\com\ta\framework\dao\CommodityDao.java
 E:\TradingArea\src\main\java\com\ta\framework\service\Impl\ActivityServiceImpl.java
 E:\TradingArea\src\main\java\com\ta\framework\entity\Trade.java

@@ -10,4 +10,6 @@ public interface CommodityService {
     public Page<Commodity> select(Page<Commodity> page);
 
     public int countByPage(Page<Commodity> page);
+
+    Page<Commodity> selectOnePic(Page<Commodity> page);
 }

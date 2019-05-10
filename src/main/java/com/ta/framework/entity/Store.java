@@ -21,6 +21,7 @@ public class Store {
     private List<Picture> storePicList;
     private User user;
     private Trade trade;
+    private String url;
 
     public Store() {
     }
@@ -40,6 +41,13 @@ public class Store {
         this.trade = trade;
     }
 
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
     public Integer getStoreId() {
         return storeId;

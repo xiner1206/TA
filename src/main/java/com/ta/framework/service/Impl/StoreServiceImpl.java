@@ -106,4 +106,31 @@ public class StoreServiceImpl implements StoreService {
         }
         return  listid;
     }
+
+    @Override
+    public Page<Store> selectOnePic(Page<Store> page) {
+        assert page.getPageSize() > 0;
+        if(page.getCondition() == null) {
+            page.setCondition(new Store());
+        }
+        if(page.getPageNum() == null || page.getPageNum() <= 0) {
+            page.setPageNum(1);
+        }
+        page.setTotalRecord(countByPage(page));
+        Page<Store> pg = new Page<>(page.getPageNum(),page.getPageSize(),page.getTotalRecord());
+        page.getCondition().setStoreState(1);
+        pg.setCondition(page.getCondition());
+        List<Store> storeList = storeDao.selectByPage(pg);
+        for (Store store:storeList) {
+            List<Integer> picIdList = store.getStorePicIdList();
+            List<Picture> storePicList = new ArrayList<>();
+            for (Integer picId: picIdList) {
+                storePicList.add(pictureDao.selectById(picId));
+            }
+            store.setTrade(null);
+            store.setUrl(storePicList.get(0).getUrl());
+        }
+        pg.setList(storeList);
+        return pg;
+    }
 }

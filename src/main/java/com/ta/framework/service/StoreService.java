@@ -10,4 +10,6 @@ public interface StoreService {
     public int countByPage(Page<Store> storePage);
 
     public int addAndUpdateStore(Store store);
+
+    Page<Store> selectOnePic(Page<Store> page);
 }

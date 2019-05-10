@@ -115,7 +115,7 @@
         <where>
             <if test="page.condition != null">
                 <if test="page.condition.commodityId != null"> AND CommodityId = #{page.condition.commodityId} </if>
-                <if test="page.condition.commodityName != null"> AND CommodityName = #{page.condition.commodityName} </if>
+                <if test="page.condition.commodityName != null"> AND CommodityName LIKE CONCAT("%", #{page.condition.commodityName},"%" ) </if>
                 <if test="page.condition.commodityState != null"> AND CommodityState = #{page.condition.commodityState} </if>
                 <if test="page.condition.commodityPrice != null"> AND CommodityPrice &gt;= #{page.condition.startPirce} AND CommodityPrice &lt;= #{page.condition.endPirce}</if>
                 <if test="page.condition.commodityRemark != null"> AND CommodityRemark = #{page.condition.commodityRemark} </if>
@@ -137,7 +137,7 @@
         <where>
             <if test="page.condition != null">
                 <if test="page.condition.commodityId != null"> AND CommodityId = #{page.condition.commodityId} </if>
-                <if test="page.condition.commodityName != null"> AND CommodityName = #{page.condition.commodityName} </if>
+                <if test="page.condition.commodityName != null"> AND CommodityName LIKE CONCAT("%", #{page.condition.commodityName},"%" )  </if>
                 <if test="page.condition.commodityState != null"> AND CommodityState = #{page.condition.commodityState} </if>
                 <if test="page.condition.commodityPrice != null"> AND CommodityPrice &gt;= #{page.condition.startPirce} AND CommodityPrice &lt;= #{page.condition.endPirce}</if>
                 <if test="page.condition.commodityRemark != null"> AND CommodityRemark = #{page.condition.commodityRemark} </if>

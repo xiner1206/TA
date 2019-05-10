@@ -120,7 +120,7 @@
         <where>
             <if test="page.condition != null">
                 <if test="page.condition.storeId != null"> AND StoreId = #{page.condition.storeId} </if>
-                <if test="page.condition.storeName != null"> AND StoreName = #{page.condition.storeName} </if>
+                <if test="page.condition.storeName != null"> AND StoreName LIKE CONCAT("%", #{page.condition.storeName},"%" ) </if>
                 <if test="page.condition.storeType != null"> AND StoreType = #{page.condition.storeType} </if>
                 <if test="page.condition.storePhone != null"> AND StorePhone = #{page.condition.storePhone} </if>
                 <if test="page.condition.storeRemark != null"> AND StoreRemark = #{page.condition.storeRemark} </if>
@@ -143,7 +143,7 @@
         <where>
             <if test="page.condition != null">
                 <if test="page.condition.storeId != null"> AND StoreId = #{page.condition.storeId} </if>
-                <if test="page.condition.storeName != null"> AND StoreName = #{page.condition.storeName} </if>
+                <if test="page.condition.storeName != null"> AND StoreName LIKE CONCAT("%", #{page.condition.storeName},"%" )</if>
                 <if test="page.condition.storeType != null"> AND StoreType = #{page.condition.storeType} </if>
                 <if test="page.condition.storePhone != null"> AND StorePhone = #{page.condition.storePhone} </if>
                 <if test="page.condition.storeRemark != null"> AND StoreRemark = #{page.condition.storeRemark} </if>

@@ -26,6 +26,7 @@ public class Commodity {
     private List<BigDecimal> priceInterval;
     private BigDecimal startPrice;
     private BigDecimal endPrice;
+    private String url;
 
     public Commodity() {
     }
@@ -57,6 +58,15 @@ public class Commodity {
         this.commodityPicIdList = commodityPicIdList;
         this.store = store;
 
+    }
+
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public Integer getCommodityId() {

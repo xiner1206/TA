@@ -4,7 +4,6 @@ import com.ta.framework.entity.Activity;
 import com.ta.framework.entity.Dto.Page;
 import com.ta.framework.entity.Vo.tradeAc;
 
-import java.util.List;
 
 public interface ActivityService {
 

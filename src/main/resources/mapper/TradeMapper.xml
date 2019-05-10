@@ -107,7 +107,7 @@
         <where>
             <if test="page.condition !=null ">
                 <if test="page.condition.tradeId != null "> AND TradeId = #{page.condition.tradeId} </if>
-                <if test="page.condition.tradeName != null"> AND TradeName = #{page.condition.tradeName} </if>
+                <if test="page.condition.tradeName != null"> AND TradeName LIKE CONCAT("%",#{page.condition.tradeName},"%")</if>
                 <if test="page.condition.tradePhone != null"> AND TradePhone = #{page.condition.tradePhone} </if>
                 <if test="page.condition.tradeState != null"> AND TradeState = #{page.condition.tradeState} </if>
                 <if test="page.condition.createTime != null"> AND CreateTime = #{page.condition.createTime} </if>
@@ -128,7 +128,7 @@
         <where>
             <if test="page.condition !=null ">
                 <if test="page.condition.tradeId != null "> AND TradeId = #{page.condition.tradeId} </if>
-                <if test="page.condition.tradeName != null"> AND TradeName = #{page.condition.tradeName} </if>
+                <if test="page.condition.tradeName != null">  AND TradeName LIKE CONCAT("%",#{page.condition.tradeName},"%") </if>
                 <if test="page.condition.tradePhone != null"> AND TradePhone = #{page.condition.tradePhone} </if>
                 <if test="page.condition.tradeState != null"> AND TradeState = #{page.condition.tradeState} </if>
                 <if test="page.condition.createTime != null"> AND CreateTime = #{page.condition.createTime} </if>
