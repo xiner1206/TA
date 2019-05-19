@@ -5,14 +5,14 @@ import com.ta.framework.dao.PictureDao;
 import com.ta.framework.entity.Commodity;
 import com.ta.framework.entity.Dto.Page;
 import com.ta.framework.entity.Picture;
+import com.ta.framework.entity.Store;
 import com.ta.framework.service.CommodityService;
+import com.ta.framework.util.SameName;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class CommodityServiceImpl implements CommodityService {
@@ -56,6 +56,7 @@ public class CommodityServiceImpl implements CommodityService {
             for (Integer picId: picIdList) {
                 commodityPicList.add(pictureDao.selectById(picId));
             }
+            commodity.setStoreId(commodity.getStore().getStoreId());
             commodity.setStore(null);
             commodity.setUrl(commodityPicList.get(0).getUrl());
 //            if (commodity.getDiscountAc() != null && commodity.getDiscountAc().getActivityDiscount() != 10) {
@@ -126,5 +127,78 @@ public class CommodityServiceImpl implements CommodityService {
             }
         }
         return  listid;
+    }
+
+    @Override
+    public Commodity selectById(Commodity commodity) {
+        Commodity commodity_rs = commodityDao.selectById(commodity.getCommodityId());
+        List<Integer> picIdList = commodity_rs.getCommodityPicIdList();
+        List<Picture> commodityPicList = new ArrayList<>();
+        for (Integer picId: picIdList) {
+            commodityPicList.add(pictureDao.selectById(picId));
+        }
+        commodity_rs.setCommodityPicList(commodityPicList);
+        Integer hotNum = commodity_rs.getHotNum();
+        commodity_rs.setHotNum(hotNum+1);
+        commodityDao.update(commodity_rs);
+        return commodity_rs;
+    }
+
+    @Override
+    public List<Commodity> sameName(Commodity commodity) {
+        Commodity commodity_demo = new Commodity();
+        commodity_demo.setCommodityId(commodity.getCommodityId());
+        List<Commodity> commodity_r= new ArrayList<>();
+        for(int i=commodity.getCommodityName().length();i>0;i--) {
+            List<String> rsList =SameName.getStrList(commodity.getCommodityName(), i);
+            for (String name : rsList) {
+                commodity_demo.setCommodityName(name);
+                List<Commodity> commodities = commodityDao.sameName(commodity_demo);
+                commodity_r.addAll(commodities);
+            }
+        }
+        for (Commodity commodity_1 : commodity_r) {
+            List<Integer> picIdList = commodity_1.getCommodityPicIdList();
+            List<Picture> commodityPicList = new ArrayList<>();
+            for (Integer picId : picIdList) {
+                commodityPicList.add(pictureDao.selectById(picId));
+            }
+            commodity_1.setUrl(commodityPicList.get(0).getUrl());
+        }
+        return removeDuplicateWithOrder(commodity_r);
+    }
+
+    @Override
+    public List<Commodity> hotSearch(Store store) {
+        List<Commodity> commodities = commodityDao.hotSearch(store);
+        for (Commodity commodity : commodities) {
+            List<Integer> picIdList = commodity.getCommodityPicIdList();
+            List<Picture> commodityPicList = new ArrayList<>();
+            for (Integer picId : picIdList) {
+                commodityPicList.add(pictureDao.selectById(picId));
+            }
+            commodity.setUrl(commodityPicList.get(0).getUrl());
+        }
+        return commodities;
+    }
+
+    public static List<Commodity> removeDuplicateWithOrder(List<Commodity> list) {
+
+        List<Commodity> commodities = new ArrayList<>();
+        for  ( int  i  =   0 ; i  <  list.size()  -   1 ; i ++ )  {
+            for  ( int  j  =  list.size()  -   1 ; j  >  i; j -- )  {
+                if  (list.get(j).getCommodityId()==list.get(i).getCommodityId())  {
+                    list.remove(j);
+                }
+            }
+        }
+        if(list.size()>=3) {
+            commodities.add(list.get(0));
+            commodities.add(list.get(1));
+            commodities.add(list.get(2));
+        }else{
+            commodities.addAll(list);
+        }
+        return commodities;
     }
 }

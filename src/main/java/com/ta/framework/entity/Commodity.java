@@ -27,6 +27,8 @@ public class Commodity {
     private BigDecimal startPrice;
     private BigDecimal endPrice;
     private String url;
+    private Integer storeId;
+    private Integer hotNum;
 
     public Commodity() {
     }
@@ -60,6 +62,14 @@ public class Commodity {
 
     }
 
+
+    public Integer getStoreId() {
+        return storeId;
+    }
+
+    public void setStoreId(Integer storeId) {
+        this.storeId = storeId;
+    }
 
     public String getUrl() {
         return url;
@@ -203,5 +213,13 @@ public class Commodity {
 
     public void setEndPrice(BigDecimal endPrice) {
         this.endPrice = endPrice;
+    }
+
+    public Integer getHotNum() {
+        return hotNum;
+    }
+
+    public void setHotNum(Integer hotNum) {
+        this.hotNum = hotNum;
     }
 }

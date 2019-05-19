@@ -9,6 +9,7 @@
         <result column="CommodityRemark" property="commodityRemark"></result>
         <result column="CreateTime" property="createTime"></result>
         <result column="EndTime" property="endTime"></result>
+        <result column="HotNum" property="hotNum"></result>
         <result column="CommodityPicIdList" property="commodityPicIdList" typeHandler="ListTypeHandler"></result>
         <association column="StoreId" property="store" javaType="com.ta.framework.entity.Store"
                      select="com.ta.framework.dao.StoreDao.selectById"/>
@@ -26,6 +27,7 @@
         CommodityRemark,
         CreateTime,
         EndTime,
+        HotNum,
         CommodityPicIdList,
         StoreId,
         DiscountAcId,
@@ -42,6 +44,7 @@
             <if test="pojo.commodityRemark != null"> CommodityRemark, </if>
             <if test="pojo.createTime != null"> CreateTime, </if>
             <if test="pojo.endTime != null"> EndTime, </if>
+            <if test="pojo.hotNum != null"> HotNum, </if>
             <if test="pojo.commodityPicIdList != null"> CommodityPicIdList, </if>
             <if test="pojo.store != null and pojo.store.storeId != null"> StoreId, </if>
             <if test="pojo.discountAc != null and pojo.discountAc.activityId != null"> DiscountAcId, </if>
@@ -56,6 +59,7 @@
             <if test="pojo.commodityRemark != null"> #{pojo.commodityRemark}, </if>
             <if test="pojo.createTime != null"> #{pojo.createTime}, </if>
             <if test="pojo.endTime != null"> #{pojo.endTime}, </if>
+            <if test="pojo.hotNum != null"> #{pojo.hotNum}, </if>
             <if test="pojo.commodityPicIdList != null"> #{pojo.commodityPicIdList,typeHandler=ListTypeHandler}, </if>
             <if test="pojo.store != null and pojo.store.storeId != null">  #{pojo.store.storeId}, </if>
             <if test="pojo.discountAc != null and pojo.discountAc.activityId != null"> #{pojo.discountAc.activityId}, </if>
@@ -72,6 +76,7 @@
             <if test="pojo.commodityRemark != null">  CommodityRemark = #{pojo.commodityRemark}, </if>
             <if test="pojo.createTime != null"> CreateTime = #{pojo.createTime}, </if>
             <if test="pojo.endTime != null"> EndTime = #{pojo.endTime}, </if>
+            <if test="pojo.hotNum != null"> HotNum = #{pojo.hotNum}, </if>
             <if test="pojo.commodityPicIdList != null"> CommodityPicIdList = #{pojo.commodityPicIdList,typeHandler=ListTypeHandler}, </if>
             <if test="pojo.store != null and pojo.store.storeId != null"> StoreId = #{pojo.store.storeId}, </if>
             <if test="pojo.discountAc != null and pojo.discountAc.activityId != null"> DiscountAcId = #{pojo.discountAc.activityId}, </if>
@@ -96,6 +101,7 @@
             <if test="pojo.commodityRemark != null"> AND CommodityRemark = #{pojo.commodityRemark} </if>
             <if test="pojo.createTime != null"> AND CreateTime = #{pojo.createTime} </if>
             <if test="pojo.endTime != null"> AND EndTime = #{pojo.endTime} </if>
+            <if test="pojo.hotNum != null"> AND HotNum = #{pojo.hotNum} </if>
             <if test="pojo.commodityPicIdList != null">AND CommodityPicIdList = #{pojo.commodityPicIdList,typeHandler=ListTypeHandler} </if>
             <if test="pojo.store != null and pojo.store.storeId != null"> AND StoreId = #{pojo.store.storeId} </if>
             <if test="pojo.discountAc != null and pojo.discountAcId != null">AND DiscountAcId = #{pojo.discountAc.activityId} </if>
@@ -121,6 +127,7 @@
                 <if test="page.condition.commodityRemark != null"> AND CommodityRemark = #{page.condition.commodityRemark} </if>
                 <if test="page.condition.createTime != null"> AND CreateTime = #{page.condition.createTime.typeHandler=DateTimeTypeHandler} </if>
                 <if test="page.condition.endTime != null"> AND EndTime = #{page.condition.endTime} </if>
+                <if test="page.condition.hotNum != null"> AND HotNum = #{page.condition.hotNum} </if>
                 <if test="page.condition.commodityPicIdList != null">AND CommodityPicIdList = #{page.condition.commodityPicIdList,typeHandler=ListTypeHandler} </if>
                 <if test="page.condition.store != null and page.condition.store.storeId != null"> AND StoreId = #{page.condition.store.storeId} </if>
                 <if test="page.condition.discountAc != null and page.condition.discountAc.activityId != null"> AND DiscountAcId = #{page.condition.discountAc.activityId }</if>
@@ -143,6 +150,7 @@
                 <if test="page.condition.commodityRemark != null"> AND CommodityRemark = #{page.condition.commodityRemark} </if>
                 <if test="page.condition.createTime != null"> AND CreateTime = #{page.condition.createTime} </if>
                 <if test="page.condition.endTime != null"> AND EndTime = #{page.condition.endTime} </if>
+                <if test="page.condition.hotNum != null"> AND HotNum = #{page.condition.hotNum} </if>
                 <if test="page.condition.commodityPicIdList != null">AND CommodityPicIdList = #{page.condition.commodityPicIdList,typeHandler=ListTypeHandler} </if>
                 <if test="page.condition.store != null and page.condition.store.storeId != null"> AND StoreId = #{page.condition.store.storeId} </if>
                 <if test="page.condition.discountAc != null and page.condition.discountAc.activityId != null"> AND DiscountAcId = #{page.condition.discountAc.activityId } </if>
@@ -150,5 +158,33 @@
 
             </if>
         </where>
+    </select>
+
+    <select id="commoditySum" resultType="int">
+        select COUNT(0)
+        FROM Commodity
+        where CommodityState = 1
+    </select>
+
+    <select id="hotSearch" resultMap="resultMap" parameterType="com.ta.framework.entity.Store">
+        select <include refid="all_column" />
+        FROM Commodity
+        WHERE
+        CommodityState =1
+            <if test="pojo.storeId != null"> AND StoreId = #{pojo.storeId} </if>
+
+        ORDER BY HotNum DESC
+        LIMIT 0, 4
+    </select>
+
+    <select id="sameName" resultMap="resultMap" parameterType="com.ta.framework.entity.Commodity">
+        select <include refid="all_column" />
+        FROM Commodity
+        WHERE
+        CommodityState =1
+            <if test="pojo.commodityId != null"> AND CommodityId != #{pojo.commodityId}</if>
+            <if test="pojo.commodityName != null"> AND CommodityName LIKE CONCAT("%",#{pojo.commodityName},"%") AND CommodityState =1</if>
+
+
     </select>
 </mapper>

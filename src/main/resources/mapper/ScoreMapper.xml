@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ta.framework.dao.ScoreDao">
+
+    <resultMap id="resultMap" type="com.ta.framework.entity.Score">
+        <id column="ScoreId" property="scoreId"></id>
+        <result column="Environment" property="environment"></result>
+        <result column="Serve" property="serve"></result>
+        <result column="Substantial" property="substantial"></result>
+        <result column="TotalScore" property="totalScore"></result>
+        <association column="StoreId" property="store" javaType="com.ta.framework.entity.Store"
+                     select="com.ta.framework.dao.StoreDao.selectById"/>
+
+    </resultMap>
+
+    <sql id="all_column">
+        ScoreId,
+        Environment,
+        Serve,
+        Substantial,
+        TotalScore,
+        StoreId
+    </sql>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="pojo.scoreId" parameterType="com.ta.framework.entity.Score">
+        insert into Score
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.environment != null"> Environment, </if>
+            <if test="pojo.serve != null"> Serve, </if>
+            <if test="pojo.substantial != null"> Substantial, </if>
+            <if test="pojo.totalScore != null"> TotalScore, </if>
+            <if test="pojo.store.storeId != null"> StoreId, </if>
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.environment != null"> #{pojo.environment}, </if>
+            <if test="pojo.serve != null"> #{pojo.serve}, </if>
+            <if test="pojo.substantial != null"> #{pojo.substantial}, </if>
+            <if test="pojo.totalScore != null"> #{pojo.totalScore}, </if>
+            <if test="pojo.store.storeId != null"> #{pojo.store.storeId}, </if>
+        </trim>
+    </insert>
+
+    <select id="avgScore" resultMap="resultMap" parameterType="com.ta.framework.entity.Store">
+        SELECT AVG(Environment)environment,AVG(Serve) serve,AVG(Substantial) substantial,AVG(TotalScore) totalScore,StoreId,COUNT(0) userNum
+        FROM Score
+        WHERE StoreId = #{pojo.storeId}
+    </select>
+</mapper>

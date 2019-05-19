@@ -99,7 +99,7 @@
         FROM Activity
         <where>
             <if test="pojo.activityId != null"> AND ActivityId = #{pojo.activityId} </if>
-            <if test="pojo.activityName != null"> AND ActivityName = #{pojo.activityName} </if>
+            <if test="pojo.activityName != null"> AND ActivityName LIKE  CONCAT("%",#{pojo.activityName},"%") </if>
             <if test="pojo.activityState != null"> AND ActivityState = #{pojo.activityState} </if>
             <if test="pojo.activityRemark != null"> AND ActivityRemark = #{pojo.activityRemark} </if>
             <if test="pojo.createTime != null"> AND CreateTime = #{pojo.createTime  } </if>
@@ -122,7 +122,7 @@
         <where>
             <if test="page.condition != null">
                 <if test="page.condition.activityId != null"> AND ActivityId = #{page.condition.activityId} </if>
-                <if test="page.condition.activityName != null"> AND ActivityName = #{page.condition.activityName} </if>
+                <if test="page.condition.activityName != null"> AND ActivityName LIKE  CONCAT("%",#{page.condition.activityName},"%") </if>
                 <if test="page.condition.activityState != null"> AND ActivityState = #{page.condition.activityState} </if>
                 <if test="page.condition.activityRemark != null"> AND ActivityRemark = #{page.condition.activityRemark}</if>
                 <if test="page.condition.activityDiscount != null"> AND ActivityDiscount = #{page.condition.activityDiscount} </if>
@@ -143,7 +143,7 @@
         <where>
             <if test="page.condition != null">
                 <if test="page.condition.activityId != null"> AND ActivityId = #{page.condition.activityId} </if>
-                <if test="page.condition.activityName != null"> AND ActivityName = #{page.condition.activityName} </if>
+                <if test="page.condition.activityName != null"> AND ActivityName LIKE  CONCAT("%",#{page.condition.activityName},"%") </if>
                 <if test="page.condition.activityState != null"> AND ActivityState = #{page.condition.activityState} </if>
                 <if test="page.condition.activityRemark != null"> AND ActivityRemark = #{page.condition.activityRemark} </if>
                 <if test="page.condition.activityDiscount != null"> AND ActivityDiscount = #{page.condition.activityDiscount} </if>
@@ -171,7 +171,7 @@
                     AND Trade.TradeId = Store.TradeId
                     AND Store.StoreId = Activity.StoreId
                 </if>
-                <if test="page.condition.acName != null"> AND ActivityName = #{page.condition.acName} </if>
+                <if test="page.condition.acName != null"> AND ActivityName LIKE  CONCAT("%",#{page.condition.acName},"%") </if>
                 <if test="page.condition.storeName != null">AND StoreName = #{page.condition.storeName}  AND Store.StoreId = Activity.StoreId</if>
                 <if test="page.condition.storeName == null">AND Store.StoreId = Activity.StoreId</if>
                 <if test="page.condition.acState != null"> AND ActivityState = #{page.condition.acState} </if>
@@ -190,7 +190,7 @@
             <if test="page.condition != null">
                 <if test="page.condition.acId != null"> AND ActivityId = #{page.condition.acId} </if>
                 <if test="page.condition.userId != null" > AND Trade.UserId = #{page.condition.userId} AND Trade.TradeId = Store.TradeId </if>
-                <if test="page.condition.acName != null"> AND ActivityName = #{page.condition.acName} </if>
+                <if test="page.condition.acName != null"> AND ActivityName LIKE  CONCAT("%",#{page.condition.acName},"%") </if>
                 <if test="page.condition.storeName != null">AND StoreName = #{page.condition.storeName}  AND Store.StoreId = Activity.StoreId</if>
                 <if test="page.condition.storeName == null">AND Store.StoreId = Activity.StoreId</if>
                 <if test="page.condition.acState != null"> AND ActivityState = #{page.condition.acState} </if>
@@ -200,5 +200,11 @@
             (Activity.CreateTime &lt;= #{page.condition.createTime} AND Activity.EndTime &gt;= #{page.condition.endTime}) OR
             (Activity.EndTime &gt;= #{page.condition.createTime} AND Activity.EndTime &lt;= #{page.condition.endTime}))
         </where>
+    </select>
+
+    <select id="activitySum" resultType="int">
+        select COUNT(0)
+        FROM Activity
+        where ActivityState = 1
     </select>
 </mapper>

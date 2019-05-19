@@ -6,7 +6,9 @@ import com.ta.framework.dao.UserDao;
 import com.ta.framework.entity.Dto.Page;
 import com.ta.framework.entity.Picture;
 import com.ta.framework.entity.Store;
+import com.ta.framework.entity.Trade;
 import com.ta.framework.entity.User;
+import com.ta.framework.service.ScoreService;
 import com.ta.framework.service.StoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,6 +26,8 @@ public class StoreServiceImpl implements StoreService {
     private PictureDao pictureDao;
     @Autowired
     private UserDao userDao;
+    @Autowired
+    private ScoreService scoreService;
 
     @Override
     public Page<Store> select(Page<Store> page) {
@@ -46,7 +50,7 @@ public class StoreServiceImpl implements StoreService {
             }
             store.setStorePicList(storePicList);
         }
-        pg.setList(storeList);
+        pg.setList(scoreService.betterStore(storeList));
         return pg;
 
     }
@@ -127,10 +131,40 @@ public class StoreServiceImpl implements StoreService {
             for (Integer picId: picIdList) {
                 storePicList.add(pictureDao.selectById(picId));
             }
+            store.setTradeId(store.getTrade().getTradeId());
             store.setTrade(null);
             store.setUrl(storePicList.get(0).getUrl());
         }
-        pg.setList(storeList);
+        pg.setList(scoreService.betterStore(storeList));
         return pg;
+    }
+
+    @Override
+    public Store selectById(Store store) {
+        Store store_rs = storeDao.selectById(store.getStoreId());
+        List<Integer> picIdList = store_rs.getStorePicIdList();
+        List<Picture> storePicList = new ArrayList<>();
+        for (Integer picId: picIdList) {
+            storePicList.add(pictureDao.selectById(picId));
+        }
+        store_rs.setStorePicList(storePicList);
+        Integer hotNum = store_rs.getHotNum();
+        store_rs.setHotNum(hotNum+1);
+        storeDao.update(store_rs);
+        return store_rs;
+    }
+
+    @Override
+    public List<Store> hotSearch(Trade trade) {
+        List<Store> storeList = storeDao.hotSearch(trade);
+        for (Store store : storeList) {
+            List<Integer> picIdList = store.getStorePicIdList();
+            List<Picture> storePicList = new ArrayList<>();
+            for (Integer picId : picIdList) {
+                storePicList.add(pictureDao.selectById(picId));
+            }
+            store.setUrl(storePicList.get(0).getUrl());
+        }
+        return storeList;
     }
 }

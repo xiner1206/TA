@@ -15,4 +15,6 @@ public interface ActivityDao<T> extends GenericDao<Activity>,PageDao<Activity> {
     Integer countTradeAc(@Param("page") Page<T> page);
 
     List<T> pageTradeAc(@Param("page") Page<T> page);
+
+    Integer activitySum();
 }

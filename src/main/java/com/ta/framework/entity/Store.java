@@ -22,6 +22,9 @@ public class Store {
     private User user;
     private Trade trade;
     private String url;
+    private Integer tradeId;
+    private Integer hotNum;
+    private boolean betterStore;
 
     public Store() {
     }
@@ -39,6 +42,14 @@ public class Store {
         this.storePicList = storePicList;
         this.user = user;
         this.trade = trade;
+    }
+
+    public Integer getTradeId() {
+        return tradeId;
+    }
+
+    public void setTradeId(Integer tradeId) {
+        this.tradeId = tradeId;
     }
 
     public String getUrl() {
@@ -159,5 +170,44 @@ public class Store {
 
     public void setTrade(Trade trade) {
         this.trade = trade;
+    }
+
+    public Integer getHotNum() {
+        return hotNum;
+    }
+
+    public void setHotNum(Integer hotNum) {
+        this.hotNum = hotNum;
+    }
+
+    public boolean isBetterStore() {
+        return betterStore;
+    }
+
+    public void setBetterStore(boolean betterStore) {
+        this.betterStore = betterStore;
+    }
+
+    @Override
+    public String toString() {
+        return "Store{" +
+                "storeId=" + storeId +
+                ", storeName='" + storeName + '\'' +
+                ", storeType='" + storeType + '\'' +
+                ", storePhone='" + storePhone + '\'' +
+                ", storeLocation='" + storeLocation + '\'' +
+                ", storeRemark='" + storeRemark + '\'' +
+                ", storeState=" + storeState +
+                ", createTime=" + createTime +
+                ", endTime=" + endTime +
+                ", storePicIdList=" + storePicIdList +
+                ", storePicList=" + storePicList +
+                ", user=" + user +
+                ", trade=" + trade +
+                ", url='" + url + '\'' +
+                ", tradeId=" + tradeId +
+                ", hotNum=" + hotNum +
+                ", betterStore=" + betterStore +
+                '}';
     }
 }

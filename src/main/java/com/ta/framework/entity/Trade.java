@@ -26,6 +26,7 @@ public class Trade {
     private List<Integer> tradePicIdList;
     private User user;
     private String url;
+    private Integer hotNum;
 
     public Trade() {
     }
@@ -148,6 +149,14 @@ public class Trade {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public Integer getHotNum() {
+        return hotNum;
+    }
+
+    public void setHotNum(Integer hotNum) {
+        this.hotNum = hotNum;
     }
 }
 

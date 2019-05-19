@@ -27,14 +27,14 @@ public class QiniuCloudUtil {
     private static final String SECRET_KEY = "vbjd5yX1GtCYcJrGzfMMeGIkN5yqfAGUFR8Glf-Y";
 
     // 要上传的空间
-    private static final String bucketname = "ta";
+    private static final String bucketname = "nta";
 
     // 密钥
     private static final Auth auth = Auth.create(ACCESS_KEY, SECRET_KEY);
 
-    private static final String DOMAIN = "http://pqip3etku.bkt.clouddn.com/";
+    private static final String DOMAIN = "http://prngfa1u2.bkt.clouddn.com/";
 
-    private static final String style = "imageView2/1/w/200/h/200/q/75";
+    private static final String style = "imageView2/1/w/200/h/200/q/75|imageslim";
 
     public String getUpToken() {
         return auth.uploadToken(bucketname, null, 3600, new StringMap().put("insertOnly", 1));

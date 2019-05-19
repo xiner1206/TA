@@ -135,4 +135,33 @@ public class TradeServiceImpl implements TradeService {
         pg.setList(tradeList);
         return pg;
     }
+
+    @Override
+    public Trade selectById(Trade trade) {
+        Trade trade_rs = tradeDao.selectById(trade.getTradeId());
+        List<Integer> picIdList = trade_rs.getTradePicIdList();
+        List<Picture> tradePicList = new ArrayList<>();
+        for (Integer picId: picIdList) {
+            tradePicList.add(pictureDao.selectById(picId));
+        }
+        trade_rs.setTradePicList(tradePicList);
+        Integer hotNum = trade_rs.getHotNum();
+        trade_rs.setHotNum(hotNum+1);
+        tradeDao.update(trade_rs);
+        return trade_rs;
+    }
+
+    @Override
+    public List<Trade> hotSearch() {
+        List<Trade> trades = tradeDao.hotSearch();
+        for (Trade trade : trades) {
+            List<Integer> picIdList = trade.getTradePicIdList();
+            List<Picture> tradePicList = new ArrayList<>();
+            for (Integer picId : picIdList) {
+                tradePicList.add(pictureDao.selectById(picId));
+            }
+            trade.setUrl(tradePicList.get(0).getUrl());
+        }
+        return trades;
+    }
 }
